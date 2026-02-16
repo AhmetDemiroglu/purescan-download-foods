@@ -1,0 +1,1073 @@
+<!doctype html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PureScan Cosmetics - Gizlilik Politikası | Privacy Policy</title>
+        <meta name="description" content="PureScan Cosmetics uygulamasının gizlilik politikası. Privacy policy for PureScan Cosmetics app." />
+        <link rel="icon" href="../assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+        <style>
+            /* ── Reset & Variables ── */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --brand-50: #f0fdfa;
+                --brand-100: #ccfbf1;
+                --brand-200: #99f6e4;
+                --brand-300: #5eead4;
+                --brand-400: #2dd4bf;
+                --brand-500: #14b8a6;
+                --brand-600: #0d9488;
+                --brand-700: #0f766e;
+                --brand-800: #115e59;
+                --brand-900: #134e4a;
+
+                --slate-50: #f8fafc;
+                --slate-100: #f1f5f9;
+                --slate-200: #e2e8f0;
+                --slate-300: #cbd5e1;
+                --slate-400: #94a3b8;
+                --slate-500: #64748b;
+                --slate-600: #475569;
+                --slate-700: #334155;
+                --slate-800: #1e293b;
+                --slate-900: #0f172a;
+
+                --orange-50: #fff7ed;
+                --orange-100: #ffedd5;
+                --orange-600: #ea580c;
+                --orange-700: #c2410c;
+                --orange-800: #9a3412;
+
+                --radius-sm: 8px;
+                --radius-md: 12px;
+                --radius-lg: 16px;
+                --radius-xl: 24px;
+                --radius-full: 9999px;
+
+                --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+                --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+                --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
+                --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.1);
+
+                --font-display: "Outfit", sans-serif;
+                --font-body: "DM Sans", sans-serif;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: var(--font-body);
+                background: var(--slate-50);
+                color: var(--slate-700);
+                line-height: 1.7;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            ::selection {
+                background: var(--brand-100);
+                color: var(--brand-900);
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            img {
+                display: block;
+                max-width: 100%;
+            }
+
+            /* ── Animations ── */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes shimmer {
+                0% {
+                    background-position: -200% 0;
+                }
+                100% {
+                    background-position: 200% 0;
+                }
+            }
+            @keyframes float {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-8px);
+                }
+            }
+            @keyframes pulseGlow {
+                0%,
+                100% {
+                    opacity: 0.4;
+                }
+                50% {
+                    opacity: 0.7;
+                }
+            }
+
+            .animate-up {
+                animation: fadeInUp 0.6s ease-out both;
+            }
+            .animate-fade {
+                animation: fadeIn 0.5s ease-out both;
+            }
+            .delay-1 {
+                animation-delay: 0.1s;
+            }
+            .delay-2 {
+                animation-delay: 0.2s;
+            }
+            .delay-3 {
+                animation-delay: 0.3s;
+            }
+            .delay-4 {
+                animation-delay: 0.4s;
+            }
+            .delay-5 {
+                animation-delay: 0.5s;
+            }
+
+            /* ── Navbar ── */
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: rgba(255, 255, 255, 0.92);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                border-bottom: 1px solid var(--slate-200);
+                transition: box-shadow 0.3s ease;
+            }
+            .navbar.scrolled {
+                box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+            }
+            .navbar-inner {
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 0 24px;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+            }
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+                border-radius: var(--radius-md);
+                object-fit: cover;
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.3s ease;
+            }
+            .brand:hover .brand-logo {
+                transform: scale(1.05);
+            }
+            .brand-text {
+                display: flex;
+                flex-direction: column;
+            }
+            .brand-name {
+                font-family: var(--font-display);
+                font-weight: 800;
+                font-size: 1.2rem;
+                color: var(--slate-900);
+                letter-spacing: -0.02em;
+                line-height: 1.1;
+            }
+            .brand-name span {
+                color: var(--brand-600);
+            }
+            .brand-subtitle {
+                font-size: 0.6rem;
+                color: var(--slate-400);
+                font-weight: 600;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+
+            /* ── Language Toggle ── */
+            .lang-toggle {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background: var(--slate-100);
+                border-radius: var(--radius-full);
+                padding: 3px;
+                cursor: pointer;
+                user-select: none;
+                border: 1px solid var(--slate-200);
+                transition: border-color 0.3s ease;
+            }
+            .lang-toggle:hover {
+                border-color: var(--brand-300);
+            }
+            .lang-btn {
+                padding: 6px 16px;
+                border-radius: var(--radius-full);
+                font-family: var(--font-display);
+                font-size: 0.75rem;
+                font-weight: 700;
+                letter-spacing: 0.04em;
+                color: var(--slate-400);
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                z-index: 1;
+            }
+            .lang-btn.active {
+                background: white;
+                color: var(--brand-700);
+                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            }
+
+            /* ── Hero Section ── */
+            .hero {
+                position: relative;
+                background: white;
+                border-bottom: 1px solid var(--slate-100);
+                overflow: hidden;
+            }
+            .hero-bg {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            .hero-orb {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(60px);
+                animation: pulseGlow 4s ease-in-out infinite;
+            }
+            .hero-orb--teal {
+                width: 300px;
+                height: 300px;
+                background: var(--brand-100);
+                top: -50px;
+                left: -80px;
+            }
+            .hero-orb--amber {
+                width: 250px;
+                height: 250px;
+                background: #fef3c7;
+                bottom: -60px;
+                right: -60px;
+                animation-delay: 1.5s;
+            }
+            .hero-orb--pink {
+                width: 180px;
+                height: 180px;
+                background: #fce7f3;
+                top: 40%;
+                right: 20%;
+                animation-delay: 3s;
+            }
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 72px 24px 56px;
+                text-align: center;
+            }
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 6px 16px;
+                border-radius: var(--radius-full);
+                background: var(--slate-50);
+                border: 1px solid var(--slate-200);
+                font-family: var(--font-display);
+                font-size: 0.7rem;
+                font-weight: 700;
+                color: var(--slate-500);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 24px;
+            }
+            .hero-badge svg {
+                color: var(--brand-500);
+            }
+            .hero-title {
+                font-family: var(--font-display);
+                font-size: clamp(2.2rem, 5vw, 3.5rem);
+                font-weight: 800;
+                color: var(--slate-900);
+                letter-spacing: -0.03em;
+                line-height: 1.1;
+                margin-bottom: 20px;
+            }
+            .hero-desc {
+                font-size: 1.1rem;
+                color: var(--slate-500);
+                max-width: 560px;
+                margin: 0 auto 28px;
+                line-height: 1.7;
+            }
+            .hero-meta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.8rem;
+                color: var(--slate-400);
+                font-weight: 500;
+            }
+            .hero-meta svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            /* ── Disclaimer Banner ── */
+            .disclaimer {
+                background: linear-gradient(135deg, var(--brand-900), var(--slate-900));
+                color: white;
+                padding: 14px 24px;
+                text-align: center;
+                font-size: 0.82rem;
+                font-weight: 500;
+                line-height: 1.5;
+                position: relative;
+                z-index: 10;
+            }
+            .disclaimer strong {
+                font-weight: 700;
+            }
+
+            /* ── Main Content ── */
+            .main-content {
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 48px 24px 64px;
+            }
+
+            /* ── Accordion ── */
+            .accordion-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .accordion-item {
+                background: white;
+                border: 1px solid var(--slate-200);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            .accordion-item:hover {
+                border-color: var(--brand-200);
+                box-shadow: 0 2px 16px rgba(20, 184, 166, 0.06);
+            }
+            .accordion-item.open {
+                border-color: var(--brand-300);
+                box-shadow: 0 4px 24px rgba(20, 184, 166, 0.08);
+            }
+            .accordion-trigger {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 24px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+                font-family: var(--font-body);
+                transition: background 0.2s ease;
+            }
+            .accordion-trigger:hover {
+                background: var(--slate-50);
+            }
+            .accordion-trigger-left {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .accordion-icon-wrap {
+                width: 44px;
+                height: 44px;
+                border-radius: var(--radius-md);
+                background: var(--brand-50);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--brand-600);
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+            .accordion-item:hover .accordion-icon-wrap,
+            .accordion-item.open .accordion-icon-wrap {
+                background: var(--brand-500);
+                color: white;
+            }
+            .accordion-icon-wrap svg {
+                width: 20px;
+                height: 20px;
+            }
+            .accordion-title {
+                font-family: var(--font-display);
+                font-size: 1.05rem;
+                font-weight: 700;
+                color: var(--slate-800);
+                transition: color 0.2s ease;
+            }
+            .accordion-item:hover .accordion-title {
+                color: var(--brand-700);
+            }
+            .accordion-chevron {
+                width: 32px;
+                height: 32px;
+                border-radius: var(--radius-full);
+                border: 1px solid var(--slate-200);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--slate-400);
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+            .accordion-item.open .accordion-chevron {
+                transform: rotate(180deg);
+                border-color: var(--brand-300);
+                color: var(--brand-600);
+                background: var(--brand-50);
+            }
+            .accordion-chevron svg {
+                width: 16px;
+                height: 16px;
+            }
+            .accordion-body {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.3s ease;
+            }
+            .accordion-item.open .accordion-body {
+                max-height: 800px;
+                opacity: 1;
+            }
+            .accordion-body-inner {
+                padding: 0 24px 24px 84px;
+                font-size: 0.92rem;
+                color: var(--slate-600);
+                line-height: 1.8;
+            }
+            .accordion-body-inner p {
+                margin-bottom: 12px;
+            }
+            .accordion-body-inner ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .accordion-body-inner li {
+                padding-left: 20px;
+                position: relative;
+            }
+            .accordion-body-inner li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--brand-400);
+            }
+            .accordion-body-inner li strong {
+                color: var(--slate-800);
+                font-weight: 600;
+            }
+            .info-box {
+                background: var(--orange-50);
+                border: 1px solid var(--orange-100);
+                border-radius: var(--radius-md);
+                padding: 16px 20px;
+                margin: 12px 0;
+            }
+            .info-box-title {
+                font-weight: 700;
+                color: var(--orange-800);
+                font-size: 0.88rem;
+                margin-bottom: 4px;
+            }
+            .info-box p {
+                font-size: 0.84rem;
+                color: var(--orange-700);
+                margin: 0;
+            }
+            .text-muted {
+                font-size: 0.84rem;
+                color: var(--slate-500);
+            }
+
+            /* ── CTA Cards ── */
+            .cta-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                margin-top: 48px;
+            }
+            @media (max-width: 600px) {
+                .cta-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* Contact Card */
+            .card {
+                position: relative;
+                background: white;
+                border: 1px solid var(--slate-200);
+                border-radius: var(--radius-xl);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            .card:hover {
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-2px);
+            }
+            .card-accent {
+                height: 3px;
+                background: linear-gradient(90deg, var(--brand-400), var(--brand-600));
+            }
+            .card-body {
+                padding: 32px 28px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            .card-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: var(--radius-full);
+                background: var(--slate-100);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--slate-400);
+            }
+            .card-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            .card-title {
+                font-family: var(--font-display);
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: var(--slate-900);
+            }
+            .card-desc {
+                font-size: 0.88rem;
+                color: var(--slate-500);
+                line-height: 1.6;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 14px 28px;
+                border-radius: var(--radius-md);
+                font-family: var(--font-display);
+                font-size: 0.88rem;
+                font-weight: 700;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            .btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            .btn-dark {
+                background: var(--slate-900);
+                color: white;
+            }
+            .btn-dark:hover {
+                background: var(--brand-600);
+                box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
+                transform: translateY(-1px);
+            }
+            .btn-play {
+                background: var(--slate-900);
+                color: white;
+                gap: 10px;
+            }
+            .btn-play:hover {
+                background: #1a7f37;
+                box-shadow: 0 4px 20px rgba(26, 127, 55, 0.3);
+                transform: translateY(-1px);
+            }
+
+            /* ── Full Width Contact (for single col on mobile) ── */
+            .contact-card-full {
+                grid-column: 1 / -1;
+            }
+
+            /* ── Footer ── */
+            .footer {
+                border-top: 1px solid var(--slate-200);
+                background: white;
+                padding: 20px 24px;
+            }
+            .footer-inner {
+                max-width: 900px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .footer-brand {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .footer-brand img {
+                width: 56px;
+                height: 56px;
+                border-radius: 6px;
+                opacity: 0.6;
+            }
+            .footer-links {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .footer-link {
+                font-size: 0.82rem;
+                font-weight: 500;
+                color: var(--slate-400);
+                transition: color 0.2s ease;
+            }
+            .footer-link:hover {
+                color: var(--brand-600);
+            }
+            .footer-sep {
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: var(--slate-300);
+            }
+            .footer-copy {
+                font-size: 0.78rem;
+                color: var(--slate-400);
+            }
+
+            /* ── Responsive ── */
+            @media (max-width: 640px) {
+                .hero-content {
+                    padding: 48px 20px 40px;
+                }
+                .hero-title {
+                    font-size: 2rem;
+                }
+                .hero-desc {
+                    font-size: 0.95rem;
+                }
+                .accordion-trigger {
+                    padding: 16px 18px;
+                }
+                .accordion-body-inner {
+                    padding: 0 18px 20px 18px;
+                }
+                .accordion-trigger-left {
+                    gap: 12px;
+                }
+                .accordion-icon-wrap {
+                    width: 38px;
+                    height: 38px;
+                }
+                .accordion-title {
+                    font-size: 0.92rem;
+                }
+                .card-body {
+                    padding: 24px 20px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ═══ Navbar ═══ -->
+        <nav class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="https://purescan.septimuslab.com" class="brand">
+                    <img src="../assets/purescan.png" alt="PureScan" class="brand-logo" />
+                    <div class="brand-text">
+                        <span class="brand-name">Pure<span>Scan</span></span>
+                        <span class="brand-subtitle">Cosmetics</span>
+                    </div>
+                </a>
+                <div class="lang-toggle" id="lang-toggle">
+                    <button class="lang-btn active" data-lang="tr" id="btn-tr">TR</button>
+                    <button class="lang-btn" data-lang="en" id="btn-en">EN</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ═══ Hero ═══ -->
+        <header class="hero">
+            <div class="hero-bg">
+                <div class="hero-orb hero-orb--teal"></div>
+                <div class="hero-orb hero-orb--amber"></div>
+                <div class="hero-orb hero-orb--pink"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge animate-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                    <span id="hero-badge-text">Yasal Belge</span>
+                </div>
+                <h1 class="hero-title animate-up delay-1" id="hero-title">Gizlilik Politikası</h1>
+                <p class="hero-desc animate-up delay-2" id="hero-desc">Verilerinizin güvenliği bizim için önceliktir. PureScan uygulamasını kullanırken verilerinizin nasıl işlendiğini şeffaf bir şekilde açıklıyoruz.</p>
+                <div class="hero-meta animate-up delay-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span id="hero-date-label">Son Güncelleme:</span> <span>10.02.2026</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- ═══ Disclaimer ═══ -->
+        <div class="disclaimer" id="disclaimer">⚠️ <strong>YASAL UYARI:</strong> PureScan tıbbi bir cihaz değildir. AI destekli analizler sadece kozmetik bilgilendirme amaçlıdır ve profesyonel tıbbi tavsiye yerine geçmez.</div>
+
+        <!-- ═══ Main ═══ -->
+        <main class="main-content">
+            <div class="accordion-list" id="accordion-list">
+                <!-- JS renders here -->
+            </div>
+
+            <!-- CTA Grid -->
+            <div class="cta-grid">
+                <!-- Contact Card -->
+                <div class="card animate-up">
+                    <div class="card-accent"></div>
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title" id="contact-title">İletişime Geçin</h3>
+                        <p class="card-desc" id="contact-desc">Gizlilik politikamız veya verileriniz hakkında sorularınız mı var?</p>
+                        <a href="mailto:septimus.labb@gmail.com" class="btn btn-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            septimus.labb@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Play Card -->
+                <div class="card animate-up delay-1">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #34d399, #059669)"></div>
+                    <div class="card-body">
+                        <div class="card-icon" style="background: #ecfdf5; color: #059669">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                        </div>
+                        <h3 class="card-title" id="play-title">Uygulamayı İndir</h3>
+                        <p class="card-desc" id="play-desc">PureScan Cosmetics'i Google Play Store'dan ücretsiz indirin.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.septimuslab.purescan" target="_blank" rel="noopener" class="btn btn-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ═══ Footer ═══ -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    
+                    <a href="https://septimuslab.com" target="_blank" rel="noopener" class="footer-link" style="font-weight: 600; color: var(--slate-600)"> <img src="../assets/septimus.png" alt="SeptimusLab" /> </a>
+                </div>
+                <p class="footer-copy">&copy; 2025 PureScan by <a href="https://septimuslab.com" target="_blank" rel="noopener" style="color: var(--brand-600); font-weight: 500">SeptimusLab</a>. <span id="footer-rights">Tüm Hakları Saklıdır.</span></p>
+            </div>
+        </footer>
+
+        <!-- ═══ JavaScript ═══ -->
+        <script>
+            // ── Icons ──
+            const icons = {
+                data: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>',
+                ai: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>',
+                money: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>',
+                trash: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>',
+                users: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+                lock: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>',
+            };
+
+            // ── Content Data ──
+            const i18n = {
+                tr: {
+                    badge: "Yasal Belge",
+                    title: "Gizlilik Politikası",
+                    desc: "Verilerinizin güvenliği bizim için önceliktir. PureScan uygulamasını kullanırken verilerinizin nasıl işlendiğini şeffaf bir şekilde açıklıyoruz.",
+                    dateLabel: "Son Güncelleme:",
+                    disclaimer: "⚠️ <strong>YASAL UYARI:</strong> PureScan tıbbi bir cihaz değildir. AI destekli analizler sadece kozmetik bilgilendirme amaçlıdır ve profesyonel tıbbi tavsiye yerine geçmez.",
+                    contactTitle: "İletişime Geçin",
+                    contactDesc: "Gizlilik politikamız veya verileriniz hakkında sorularınız mı var?",
+                    playTitle: "Uygulamayı İndir",
+                    playDesc: "PureScan Cosmetics'i Google Play Store'dan ücretsiz indirin.",
+                    rights: "Tüm Hakları Saklıdır.",
+                    sections: [
+                        {
+                            icon: "data",
+                            title: "1. Toplanan Veriler ve Kullanım Amacı",
+                            html: "<p>Uygulama deneyiminizi iyileştirmek için şu verileri işleriz:</p><ul><li><strong>Görsel Veriler:</strong> İçerik analizi (OCR) ve cilt tipi tespiti için yüklediğiniz fotoğraflar.</li><li><strong>Biyometrik Veri (Yüz Analizi):</strong> Cilt tipinizi belirlemek için yüz fotoğrafınız anlık olarak işlenir. <strong>Bu fotoğraflar işlem bittiği anda sunucudan silinir ve asla kalıcı olarak saklanmaz.</strong></li><li><strong>Hesap Bilgileri:</strong> Eğer üye olursanız; e-posta adresiniz ve size özel atanan kullanıcı kimliğiniz (UID).</li><li><strong>Analiz Geçmişi:</strong> Tarattığınız ürünler ve aldığınız sonuçlar, geçmişe dönük inceleyebilmeniz için kaydedilir.</li></ul>",
+                        },
+                        {
+                            icon: "ai",
+                            title: "2. Veritabanı ve Üçüncü Taraf Hizmetler",
+                            html: "<p>Güvenilir ve küresel altyapılar kullanıyoruz:</p><ul><li><strong>Google Gemini AI (ABD):</strong> Fotoğraflarınız ve metinleriniz analiz için Google'ın yapay zeka servisine şifreli (HTTPS) olarak gönderilir. Google bu verileri kimliğinizle eşleştirmez.</li><li><strong>Firebase Firestore (Veritabanı):</strong> Analiz sonuçlarınız, tarama geçmişiniz ve kullanıcı profiliniz Google'ın güvenli bulut veritabanı Firestore'da şifreli olarak saklanır.</li><li><strong>Firebase Auth:</strong> Kimlik doğrulama işlemleriniz güvenli bir şekilde yönetilir.</li></ul>",
+                        },
+                        {
+                            icon: "money",
+                            title: "3. Reklamlar ve Abonelikler",
+                            html: "<p>Uygulamanın ücretsiz kalabilmesi için:</p><ul><li><strong>Google AdMob:</strong> Ücretsiz kullanıcılara alakalı reklamlar göstermek için cihaz reklam kimliğiniz (Advertising ID) kullanılabilir.</li><li><strong>RevenueCat:</strong> Premium abonelik satın alımları güvenli ödeme altyapıları üzerinden yönetilir. PureScan kredi kartı bilgilerinizi görmez ve saklamaz.</li></ul>",
+                        },
+                        {
+                            icon: "trash",
+                            title: "4. Hesap Silme ve Veri Kontrolü",
+                            html: '<p>Verileriniz üzerinde tam kontrol sahibisiniz:</p><div class="info-box"><p class="info-box-title">Hesap Silme:</p><p>Uygulama içinde <strong>"Ayarlar &gt; Hesabımı Sil"</strong> seçeneğini kullandığınızda, bulut veritabanımızdaki (Firestore) tüm verileriniz ve kimlik bilgileriniz kalıcı olarak silinir.</p></div><p class="text-muted">"Verileri Sıfırla" seçeneği, hesabınızı kapatmadan bu hesaba ait tüm verileri kalıcı olarak siler.</p>',
+                        },
+                        {
+                            icon: "users",
+                            title: "5. Genel İzleyici Kitlesi",
+                            html: "<p>PureScan genel izleyici kitlesine uygundur. 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamıyoruz. Çocuğunuzun izniniz olmadan veri paylaştığını düşünüyorsanız lütfen bizimle iletişime geçin.</p>",
+                        },
+                        {
+                            icon: "lock",
+                            title: "6. Güvenlik",
+                            html: "<p>Verileriniz transfer edilirken endüstri standardı SSL/TLS şifreleme kullanılır. Veritabanına erişim, sadece yetkili kullanıcılar için katı güvenlik kuralları ile sınırlandırılmıştır.</p>",
+                        },
+                    ],
+                },
+                en: {
+                    badge: "Legal Document",
+                    title: "Privacy Policy",
+                    desc: "Your data security is our priority. We transparently explain how your data is processed when using the PureScan app.",
+                    dateLabel: "Last Updated:",
+                    disclaimer: "⚠️ <strong>LEGAL DISCLAIMER:</strong> PureScan is not a medical device. AI-powered analyses are for cosmetic information purposes only and do not substitute professional medical advice.",
+                    contactTitle: "Contact Us",
+                    contactDesc: "Questions about our privacy policy or your data?",
+                    playTitle: "Download App",
+                    playDesc: "Download PureScan Cosmetics from Google Play Store for free.",
+                    rights: "All Rights Reserved.",
+                    sections: [
+                        {
+                            icon: "data",
+                            title: "1. Data Collection & Purpose",
+                            html: "<p>We process the following data to improve your experience:</p><ul><li><strong>Visual Data:</strong> Photos uploaded for ingredient analysis (OCR) and skin type detection.</li><li><strong>Biometric Data (Face Analysis):</strong> Your face photo is processed instantly to determine skin type. <strong>These photos are deleted from the server immediately after processing and are never permanently stored.</strong></li><li><strong>Account Info:</strong> If you sign up; your email address and unique User ID (UID).</li><li><strong>Scan History:</strong> Products you scan and their results are saved so you can review them later.</li></ul>",
+                        },
+                        {
+                            icon: "ai",
+                            title: "2. Database & Third-Party Services",
+                            html: "<p>We use trusted global infrastructures:</p><ul><li><strong>Google Gemini AI (USA):</strong> Photos and text are sent encrypted (HTTPS) to Google's AI service. Google does not link this data to your identity.</li><li><strong>Firebase Firestore (Database):</strong> Your analysis results, history, and profile are stored encrypted in Google's secure cloud database, Firestore.</li><li><strong>Firebase Auth:</strong> Your authentication credentials are managed securely.</li></ul>",
+                        },
+                        {
+                            icon: "money",
+                            title: "3. Ads & Subscriptions",
+                            html: "<p>To keep the app free:</p><ul><li><strong>Google AdMob:</strong> For free users, your device's Advertising ID may be used to show relevant ads.</li><li><strong>RevenueCat:</strong> Premium subscription purchases are managed via secure payment infrastructures. PureScan does not see or store credit card details.</li></ul>",
+                        },
+                        {
+                            icon: "trash",
+                            title: "4. Account Deletion & Control",
+                            html: '<p>You have full control over your data:</p><div class="info-box"><p class="info-box-title">Account Deletion:</p><p>Using the <strong>"Settings &gt; Delete Account"</strong> option in the app permanently deletes all your data and credentials from our cloud database (Firestore).</p></div><p class="text-muted">The "Reset Data" option permanently deletes all data associated with this account without closing the account.</p>',
+                        },
+                        {
+                            icon: "users",
+                            title: "5. General Audience",
+                            html: "<p>PureScan is suitable for a general audience. We do not knowingly collect personal data from children under 13. If you believe your child has shared data without permission, please contact us.</p>",
+                        },
+                        {
+                            icon: "lock",
+                            title: "6. Security",
+                            html: "<p>We use industry-standard SSL/TLS encryption for data transfer. Database access is restricted to authorized users with strict security rules.</p>",
+                        },
+                    ],
+                },
+            };
+
+            // ── State ──
+            let currentLang = "tr";
+            let openIndex = null;
+
+            // ── Render ──
+            function render(lang) {
+                const d = i18n[lang];
+
+                // Hero
+                document.getElementById("hero-badge-text").textContent = d.badge;
+                document.getElementById("hero-title").textContent = d.title;
+                document.getElementById("hero-desc").textContent = d.desc;
+                document.getElementById("hero-date-label").textContent = d.dateLabel;
+
+                // Disclaimer
+                document.getElementById("disclaimer").innerHTML = d.disclaimer;
+
+                // CTA Cards
+                document.getElementById("contact-title").textContent = d.contactTitle;
+                document.getElementById("contact-desc").textContent = d.contactDesc;
+                document.getElementById("play-title").textContent = d.playTitle;
+                document.getElementById("play-desc").textContent = d.playDesc;
+
+                // Footer
+                document.getElementById("footer-rights").textContent = d.rights;
+
+                // Accordion
+                const list = document.getElementById("accordion-list");
+                list.innerHTML = "";
+
+                d.sections.forEach(function (section, i) {
+                    var item = document.createElement("div");
+                    item.className = "accordion-item animate-up";
+                    item.style.animationDelay = i * 0.08 + "s";
+                    if (openIndex === i) item.classList.add("open");
+
+                    item.innerHTML =
+                        '<button class="accordion-trigger" data-index="' +
+                        i +
+                        '">' +
+                        '<div class="accordion-trigger-left">' +
+                        '<div class="accordion-icon-wrap">' +
+                        (icons[section.icon] || icons.data) +
+                        "</div>" +
+                        '<span class="accordion-title">' +
+                        section.title +
+                        "</span>" +
+                        "</div>" +
+                        '<div class="accordion-chevron">' +
+                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
+                        "</div>" +
+                        "</button>" +
+                        '<div class="accordion-body">' +
+                        '<div class="accordion-body-inner">' +
+                        section.html +
+                        "</div>" +
+                        "</div>";
+
+                    list.appendChild(item);
+                });
+
+                // Re-bind accordion triggers
+                document.querySelectorAll(".accordion-trigger").forEach(function (btn) {
+                    btn.addEventListener("click", function () {
+                        var idx = parseInt(this.getAttribute("data-index"));
+                        toggleAccordion(idx);
+                    });
+                });
+            }
+
+            function toggleAccordion(idx) {
+                var items = document.querySelectorAll(".accordion-item");
+                items.forEach(function (item, i) {
+                    if (i === idx) {
+                        item.classList.toggle("open");
+                        openIndex = item.classList.contains("open") ? idx : null;
+                    } else {
+                        item.classList.remove("open");
+                    }
+                });
+            }
+
+            // ── Language Switch ──
+            var btnTr = document.getElementById("btn-tr");
+            var btnEn = document.getElementById("btn-en");
+
+            function switchLang(lang) {
+                currentLang = lang;
+                openIndex = null;
+
+                btnTr.classList.toggle("active", lang === "tr");
+                btnEn.classList.toggle("active", lang === "en");
+
+                document.documentElement.lang = lang;
+
+                // Smooth transition
+                var main = document.querySelector(".main-content");
+                var hero = document.querySelector(".hero");
+                main.style.opacity = "0";
+                hero.style.opacity = "0";
+                main.style.transition = "opacity 0.2s ease";
+                hero.style.transition = "opacity 0.2s ease";
+
+                setTimeout(function () {
+                    render(lang);
+                    main.style.opacity = "1";
+                    hero.style.opacity = "1";
+                }, 200);
+            }
+
+            btnTr.addEventListener("click", function () {
+                switchLang("tr");
+            });
+            btnEn.addEventListener("click", function () {
+                switchLang("en");
+            });
+
+            // ── Navbar scroll shadow ──
+            window.addEventListener("scroll", function () {
+                document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 10);
+            });
+
+            // ── Init ──
+            render("tr");
+        </script>
+    </body>
+</html>
