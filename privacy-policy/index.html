@@ -1,1073 +1,1283 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PureScan Cosmetics - Gizlilik Politikası | Privacy Policy</title>
-        <meta name="description" content="PureScan Cosmetics uygulamasının gizlilik politikası. Privacy policy for PureScan Cosmetics app." />
-        <link rel="icon" href="../assets/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
-        <style>
-            /* ── Reset & Variables ── */
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PureScan Foods - Gizlilik Politikası</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FDF8F3',
+                        warmWhite: '#FFFBF7',
+                        softGray: '#F5F0EB',
+                        charcoal: '#2D2A26',
+                        warmGray: '#6B6560',
+                        coral: '#E85D4C',
+                        coralLight: '#FF7A6B',
+                        navy: '#1E3A5F',
+                        navyLight: '#2B5278',
+                        mint: '#3CB371',
+                        gold: '#D4A574'
+                    },
+                    fontFamily: {
+                        display: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
             }
+        }
+    </script>
+    <style>
+        :root {
+            --bg: #FDF8F3;
+            --fg: #2D2A26;
+            --muted: #6B6560;
+            --accent: #E85D4C;
+            --accent-light: #FF7A6B;
+            --navy: #1E3A5F;
+            --card: #FFFFFF;
+            --border: #E8E0D8;
+        }
 
-            :root {
-                --brand-50: #f0fdfa;
-                --brand-100: #ccfbf1;
-                --brand-200: #99f6e4;
-                --brand-300: #5eead4;
-                --brand-400: #2dd4bf;
-                --brand-500: #14b8a6;
-                --brand-600: #0d9488;
-                --brand-700: #0f766e;
-                --brand-800: #115e59;
-                --brand-900: #134e4a;
+        * {
+            box-sizing: border-box;
+        }
 
-                --slate-50: #f8fafc;
-                --slate-100: #f1f5f9;
-                --slate-200: #e2e8f0;
-                --slate-300: #cbd5e1;
-                --slate-400: #94a3b8;
-                --slate-500: #64748b;
-                --slate-600: #475569;
-                --slate-700: #334155;
-                --slate-800: #1e293b;
-                --slate-900: #0f172a;
+        html {
+            scroll-behavior: smooth;
+        }
 
-                --orange-50: #fff7ed;
-                --orange-100: #ffedd5;
-                --orange-600: #ea580c;
-                --orange-700: #c2410c;
-                --orange-800: #9a3412;
-
-                --radius-sm: 8px;
-                --radius-md: 12px;
-                --radius-lg: 16px;
-                --radius-xl: 24px;
-                --radius-full: 9999px;
-
-                --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-                --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
-                --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
-                --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.1);
-
-                --font-display: "Outfit", sans-serif;
-                --font-body: "DM Sans", sans-serif;
-            }
-
+        @media (prefers-reduced-motion: reduce) {
             html {
-                scroll-behavior: smooth;
+                scroll-behavior: auto;
             }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
 
-            body {
-                font-family: var(--font-body);
-                background: var(--slate-50);
-                color: var(--slate-700);
-                line-height: 1.7;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-            }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
+            overflow-x: hidden;
+        }
 
-            ::selection {
-                background: var(--brand-100);
-                color: var(--brand-900);
-            }
+        /* Animated Background */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+        }
 
-            a {
-                color: inherit;
-                text-decoration: none;
-            }
-            img {
-                display: block;
-                max-width: 100%;
-            }
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            animation: float 20s ease-in-out infinite;
+        }
 
-            /* ── Animations ── */
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-            @keyframes fadeIn {
-                from {
-                    opacity: 0;
-                }
-                to {
-                    opacity: 1;
-                }
-            }
-            @keyframes shimmer {
-                0% {
-                    background-position: -200% 0;
-                }
-                100% {
-                    background-position: 200% 0;
-                }
-            }
-            @keyframes float {
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(-8px);
-                }
-            }
-            @keyframes pulseGlow {
-                0%,
-                100% {
-                    opacity: 0.4;
-                }
-                50% {
-                    opacity: 0.7;
-                }
-            }
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(232, 93, 76, 0.15), rgba(255, 122, 107, 0.1));
+            top: -100px;
+            right: -100px;
+            animation-delay: 0s;
+        }
 
-            .animate-up {
-                animation: fadeInUp 0.6s ease-out both;
-            }
-            .animate-fade {
-                animation: fadeIn 0.5s ease-out both;
-            }
-            .delay-1 {
-                animation-delay: 0.1s;
-            }
-            .delay-2 {
-                animation-delay: 0.2s;
-            }
-            .delay-3 {
-                animation-delay: 0.3s;
-            }
-            .delay-4 {
-                animation-delay: 0.4s;
-            }
-            .delay-5 {
-                animation-delay: 0.5s;
-            }
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(30, 58, 95, 0.1), rgba(43, 82, 120, 0.08));
+            bottom: 20%;
+            left: -50px;
+            animation-delay: -5s;
+        }
 
-            /* ── Navbar ── */
-            .navbar {
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                background: rgba(255, 255, 255, 0.92);
-                backdrop-filter: blur(20px) saturate(180%);
-                -webkit-backdrop-filter: blur(20px) saturate(180%);
-                border-bottom: 1px solid var(--slate-200);
-                transition: box-shadow 0.3s ease;
-            }
-            .navbar.scrolled {
-                box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
-            }
-            .navbar-inner {
-                max-width: 900px;
-                margin: 0 auto;
-                padding: 0 24px;
-                height: 64px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-            .brand {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                text-decoration: none;
-            }
-            .brand-logo {
-                width: 40px;
-                height: 40px;
-                border-radius: var(--radius-md);
-                object-fit: cover;
-                box-shadow: var(--shadow-sm);
-                transition: transform 0.3s ease;
-            }
-            .brand:hover .brand-logo {
-                transform: scale(1.05);
-            }
-            .brand-text {
-                display: flex;
-                flex-direction: column;
-            }
-            .brand-name {
-                font-family: var(--font-display);
-                font-weight: 800;
-                font-size: 1.2rem;
-                color: var(--slate-900);
-                letter-spacing: -0.02em;
-                line-height: 1.1;
-            }
-            .brand-name span {
-                color: var(--brand-600);
-            }
-            .brand-subtitle {
-                font-size: 0.6rem;
-                color: var(--slate-400);
-                font-weight: 600;
-                letter-spacing: 0.12em;
-                text-transform: uppercase;
-            }
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, rgba(60, 179, 113, 0.1), rgba(212, 165, 116, 0.08));
+            top: 50%;
+            right: 10%;
+            animation-delay: -10s;
+        }
 
-            /* ── Language Toggle ── */
-            .lang-toggle {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                background: var(--slate-100);
-                border-radius: var(--radius-full);
-                padding: 3px;
-                cursor: pointer;
-                user-select: none;
-                border: 1px solid var(--slate-200);
-                transition: border-color 0.3s ease;
-            }
-            .lang-toggle:hover {
-                border-color: var(--brand-300);
-            }
-            .lang-btn {
-                padding: 6px 16px;
-                border-radius: var(--radius-full);
-                font-family: var(--font-display);
-                font-size: 0.75rem;
-                font-weight: 700;
-                letter-spacing: 0.04em;
-                color: var(--slate-400);
-                background: transparent;
-                border: none;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                position: relative;
-                z-index: 1;
-            }
-            .lang-btn.active {
-                background: white;
-                color: var(--brand-700);
-                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-            }
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(5deg); }
+            50% { transform: translate(-20px, 20px) rotate(-5deg); }
+            75% { transform: translate(20px, 30px) rotate(3deg); }
+        }
 
-            /* ── Hero Section ── */
-            .hero {
-                position: relative;
-                background: white;
-                border-bottom: 1px solid var(--slate-100);
-                overflow: hidden;
-            }
-            .hero-bg {
-                position: absolute;
-                inset: 0;
-                overflow: hidden;
-                pointer-events: none;
-            }
-            .hero-orb {
-                position: absolute;
-                border-radius: 50%;
-                filter: blur(60px);
-                animation: pulseGlow 4s ease-in-out infinite;
-            }
-            .hero-orb--teal {
-                width: 300px;
-                height: 300px;
-                background: var(--brand-100);
-                top: -50px;
-                left: -80px;
-            }
-            .hero-orb--amber {
-                width: 250px;
-                height: 250px;
-                background: #fef3c7;
-                bottom: -60px;
-                right: -60px;
-                animation-delay: 1.5s;
-            }
-            .hero-orb--pink {
-                width: 180px;
-                height: 180px;
-                background: #fce7f3;
-                top: 40%;
-                right: 20%;
-                animation-delay: 3s;
-            }
-            .hero-content {
-                position: relative;
-                z-index: 2;
-                max-width: 760px;
-                margin: 0 auto;
-                padding: 72px 24px 56px;
-                text-align: center;
-            }
-            .hero-badge {
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                padding: 6px 16px;
-                border-radius: var(--radius-full);
-                background: var(--slate-50);
-                border: 1px solid var(--slate-200);
-                font-family: var(--font-display);
-                font-size: 0.7rem;
-                font-weight: 700;
-                color: var(--slate-500);
-                text-transform: uppercase;
-                letter-spacing: 0.08em;
-                margin-bottom: 24px;
-            }
-            .hero-badge svg {
-                color: var(--brand-500);
-            }
-            .hero-title {
-                font-family: var(--font-display);
-                font-size: clamp(2.2rem, 5vw, 3.5rem);
-                font-weight: 800;
-                color: var(--slate-900);
-                letter-spacing: -0.03em;
-                line-height: 1.1;
-                margin-bottom: 20px;
-            }
-            .hero-desc {
-                font-size: 1.1rem;
-                color: var(--slate-500);
-                max-width: 560px;
-                margin: 0 auto 28px;
-                line-height: 1.7;
-            }
-            .hero-meta {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                font-size: 0.8rem;
-                color: var(--slate-400);
-                font-weight: 500;
-            }
-            .hero-meta svg {
-                width: 14px;
-                height: 14px;
-            }
+        /* Hero Section */
+        .hero-gradient {
+            background: linear-gradient(180deg, #FFFBF7 0%, #FDF8F3 100%);
+        }
 
-            /* ── Disclaimer Banner ── */
-            .disclaimer {
-                background: linear-gradient(135deg, var(--brand-900), var(--slate-900));
-                color: white;
-                padding: 14px 24px;
-                text-align: center;
-                font-size: 0.82rem;
-                font-weight: 500;
-                line-height: 1.5;
-                position: relative;
-                z-index: 10;
-            }
-            .disclaimer strong {
-                font-weight: 700;
-            }
+        /* Logo Animation */
+        .logo-container {
+            animation: logoEntrance 1s ease-out forwards;
+            opacity: 0;
+        }
 
-            /* ── Main Content ── */
-            .main-content {
-                max-width: 760px;
-                margin: 0 auto;
-                padding: 48px 24px 64px;
-            }
-
-            /* ── Accordion ── */
-            .accordion-list {
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
-            }
-            .accordion-item {
-                background: white;
-                border: 1px solid var(--slate-200);
-                border-radius: var(--radius-lg);
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-            .accordion-item:hover {
-                border-color: var(--brand-200);
-                box-shadow: 0 2px 16px rgba(20, 184, 166, 0.06);
-            }
-            .accordion-item.open {
-                border-color: var(--brand-300);
-                box-shadow: 0 4px 24px rgba(20, 184, 166, 0.08);
-            }
-            .accordion-trigger {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                padding: 20px 24px;
-                background: none;
-                border: none;
-                cursor: pointer;
-                text-align: left;
-                font-family: var(--font-body);
-                transition: background 0.2s ease;
-            }
-            .accordion-trigger:hover {
-                background: var(--slate-50);
-            }
-            .accordion-trigger-left {
-                display: flex;
-                align-items: center;
-                gap: 16px;
-            }
-            .accordion-icon-wrap {
-                width: 44px;
-                height: 44px;
-                border-radius: var(--radius-md);
-                background: var(--brand-50);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--brand-600);
-                flex-shrink: 0;
-                transition: all 0.3s ease;
-            }
-            .accordion-item:hover .accordion-icon-wrap,
-            .accordion-item.open .accordion-icon-wrap {
-                background: var(--brand-500);
-                color: white;
-            }
-            .accordion-icon-wrap svg {
-                width: 20px;
-                height: 20px;
-            }
-            .accordion-title {
-                font-family: var(--font-display);
-                font-size: 1.05rem;
-                font-weight: 700;
-                color: var(--slate-800);
-                transition: color 0.2s ease;
-            }
-            .accordion-item:hover .accordion-title {
-                color: var(--brand-700);
-            }
-            .accordion-chevron {
-                width: 32px;
-                height: 32px;
-                border-radius: var(--radius-full);
-                border: 1px solid var(--slate-200);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--slate-400);
-                flex-shrink: 0;
-                transition: all 0.3s ease;
-            }
-            .accordion-item.open .accordion-chevron {
-                transform: rotate(180deg);
-                border-color: var(--brand-300);
-                color: var(--brand-600);
-                background: var(--brand-50);
-            }
-            .accordion-chevron svg {
-                width: 16px;
-                height: 16px;
-            }
-            .accordion-body {
-                max-height: 0;
+        @keyframes logoEntrance {
+            0% {
                 opacity: 0;
-                overflow: hidden;
-                transition:
-                    max-height 0.4s ease,
-                    opacity 0.3s ease;
+                transform: translateY(-30px) scale(0.9);
             }
-            .accordion-item.open .accordion-body {
-                max-height: 800px;
+            100% {
                 opacity: 1;
+                transform: translateY(0) scale(1);
             }
-            .accordion-body-inner {
-                padding: 0 24px 24px 84px;
-                font-size: 0.92rem;
-                color: var(--slate-600);
-                line-height: 1.8;
-            }
-            .accordion-body-inner p {
-                margin-bottom: 12px;
-            }
-            .accordion-body-inner ul {
-                list-style: none;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-            .accordion-body-inner li {
-                padding-left: 20px;
-                position: relative;
-            }
-            .accordion-body-inner li::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 10px;
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background: var(--brand-400);
-            }
-            .accordion-body-inner li strong {
-                color: var(--slate-800);
-                font-weight: 600;
-            }
-            .info-box {
-                background: var(--orange-50);
-                border: 1px solid var(--orange-100);
-                border-radius: var(--radius-md);
-                padding: 16px 20px;
-                margin: 12px 0;
-            }
-            .info-box-title {
-                font-weight: 700;
-                color: var(--orange-800);
-                font-size: 0.88rem;
-                margin-bottom: 4px;
-            }
-            .info-box p {
-                font-size: 0.84rem;
-                color: var(--orange-700);
-                margin: 0;
-            }
-            .text-muted {
-                font-size: 0.84rem;
-                color: var(--slate-500);
-            }
+        }
 
-            /* ── CTA Cards ── */
-            .cta-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-                margin-top: 48px;
-            }
-            @media (max-width: 600px) {
-                .cta-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
+        /* Language Selector */
+        .lang-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
 
-            /* Contact Card */
-            .card {
-                position: relative;
-                background: white;
-                border: 1px solid var(--slate-200);
-                border-radius: var(--radius-xl);
-                overflow: hidden;
-                transition: all 0.3s ease;
-            }
-            .card:hover {
-                box-shadow: var(--shadow-lg);
-                transform: translateY(-2px);
-            }
-            .card-accent {
-                height: 3px;
-                background: linear-gradient(90deg, var(--brand-400), var(--brand-600));
-            }
-            .card-body {
-                padding: 32px 28px;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 16px;
-            }
-            .card-icon {
-                width: 52px;
-                height: 52px;
-                border-radius: var(--radius-full);
-                background: var(--slate-100);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--slate-400);
-            }
-            .card-icon svg {
-                width: 24px;
-                height: 24px;
-            }
-            .card-title {
-                font-family: var(--font-display);
-                font-size: 1.2rem;
-                font-weight: 700;
-                color: var(--slate-900);
-            }
-            .card-desc {
-                font-size: 0.88rem;
-                color: var(--slate-500);
-                line-height: 1.6;
-            }
-            .btn {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 8px;
-                padding: 14px 28px;
-                border-radius: var(--radius-md);
-                font-family: var(--font-display);
-                font-size: 0.88rem;
-                font-weight: 700;
-                border: none;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                text-decoration: none;
-            }
-            .btn svg {
-                width: 18px;
-                height: 18px;
-            }
-            .btn-dark {
-                background: var(--slate-900);
-                color: white;
-            }
-            .btn-dark:hover {
-                background: var(--brand-600);
-                box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
-                transform: translateY(-1px);
-            }
-            .btn-play {
-                background: var(--slate-900);
-                color: white;
-                gap: 10px;
-            }
-            .btn-play:hover {
-                background: #1a7f37;
-                box-shadow: 0 4px 20px rgba(26, 127, 55, 0.3);
-                transform: translateY(-1px);
-            }
+        .lang-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
 
-            /* ── Full Width Contact (for single col on mobile) ── */
-            .contact-card-full {
-                grid-column: 1 / -1;
-            }
+        .lang-btn.active::after,
+        .lang-btn:hover::after {
+            width: 80%;
+        }
 
-            /* ── Footer ── */
-            .footer {
-                border-top: 1px solid var(--slate-200);
-                background: white;
-                padding: 20px 24px;
-            }
-            .footer-inner {
-                max-width: 900px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .footer-brand {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-            .footer-brand img {
-                width: 56px;
-                height: 56px;
-                border-radius: 6px;
-                opacity: 0.6;
-            }
-            .footer-links {
-                display: flex;
-                align-items: center;
-                gap: 24px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .footer-link {
-                font-size: 0.82rem;
-                font-weight: 500;
-                color: var(--slate-400);
-                transition: color 0.2s ease;
-            }
-            .footer-link:hover {
-                color: var(--brand-600);
-            }
-            .footer-sep {
-                width: 4px;
-                height: 4px;
-                border-radius: 50%;
-                background: var(--slate-300);
-            }
-            .footer-copy {
-                font-size: 0.78rem;
-                color: var(--slate-400);
-            }
+        .lang-btn.active {
+            color: var(--accent);
+            font-weight: 600;
+        }
 
-            /* ── Responsive ── */
-            @media (max-width: 640px) {
-                .hero-content {
-                    padding: 48px 20px 40px;
-                }
-                .hero-title {
-                    font-size: 2rem;
-                }
-                .hero-desc {
-                    font-size: 0.95rem;
-                }
-                .accordion-trigger {
-                    padding: 16px 18px;
-                }
-                .accordion-body-inner {
-                    padding: 0 18px 20px 18px;
-                }
-                .accordion-trigger-left {
-                    gap: 12px;
-                }
-                .accordion-icon-wrap {
-                    width: 38px;
-                    height: 38px;
-                }
-                .accordion-title {
-                    font-size: 0.92rem;
-                }
-                .card-body {
-                    padding: 24px 20px;
-                }
+        /* Section Cards */
+        .section-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(232, 224, 216, 0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .section-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(45, 42, 38, 0.08);
+            border-color: rgba(232, 93, 76, 0.2);
+        }
+
+        /* Accordion */
+        .accordion-header {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(232, 93, 76, 0.05);
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .accordion-content.open {
+            max-height: 2000px;
+        }
+
+        /* Medical Warning Card */
+        .warning-card {
+            background: linear-gradient(135deg, rgba(232, 93, 76, 0.08), rgba(255, 122, 107, 0.04));
+            border: 1px solid rgba(232, 93, 76, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent), var(--accent-light));
+        }
+
+        /* Decorative Elements */
+        .decorative-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        /* Footer */
+        .footer-gradient {
+            background: linear-gradient(180deg, #FDF8F3 0%, #F5F0EB 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--muted);
+        }
+
+        /* Flag Icons */
+        .flag-icon {
+            width: 24px;
+            height: 16px;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Stagger Animation */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+        .stagger-7 { animation-delay: 0.7s; }
+        .stagger-8 { animation-delay: 0.8s; }
+
+        /* Bullet Points */
+        .custom-bullet {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .custom-bullet::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.6em;
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        /* Button Hover */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(232, 93, 76, 0.3);
+        }
+
+        /* Focus States */
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Particle Animation */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 15s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
             }
-        </style>
-    </head>
-    <body>
-        <!-- ═══ Navbar ═══ -->
-        <nav class="navbar" id="navbar">
-            <div class="navbar-inner">
-                <a href="https://purescan.septimuslab.com" class="brand">
-                    <img src="../assets/purescan.png" alt="PureScan" class="brand-logo" />
-                    <div class="brand-text">
-                        <span class="brand-name">Pure<span>Scan</span></span>
-                        <span class="brand-subtitle">Cosmetics</span>
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Animated Background -->
+    <div class="bg-pattern" aria-hidden="true">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+
+    <!-- Particles -->
+    <div id="particles" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-cream/80 backdrop-blur-lg border-b border-border">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="logo-container flex items-center gap-3">
+                    <img src="../assets/purescan.png" alt="PureScan Foods Logo" class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl shadow-lg">
+                    <div>
+                        <h1 class="text-lg sm:text-xl font-extrabold leading-none tracking-tight"><span class="text-charcoal">Pure</span><span class="text-coral">Scan</span></h1>
+                        <p class="text-sm sm:text-base font-display italic text-charcoal/90 leading-none mt-0">Foods</p>
                     </div>
-                </a>
-                <div class="lang-toggle" id="lang-toggle">
-                    <button class="lang-btn active" data-lang="tr" id="btn-tr">TR</button>
-                    <button class="lang-btn" data-lang="en" id="btn-en">EN</button>
+                </div>
+
+                <!-- Language Selector -->
+                <div class="flex items-center gap-1 sm:gap-2 bg-white/60 backdrop-blur rounded-full p-1 sm:p-1.5 border border-border">
+                    <button class="lang-btn active flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-sm" data-lang="tr" aria-label="Türkçe">
+                        <svg class="flag-icon" viewBox="0 0 24 16" aria-hidden="true">
+                            <rect width="24" height="16" fill="#E30A17"/>
+                            <circle cx="10" cy="8" r="4.2" fill="#FFFFFF"/>
+                            <circle cx="11" cy="8" r="3.4" fill="#E30A17"/>
+                            <polygon points="16.8,5.4 17.5,7.3 19.5,7.3 17.9,8.5 18.5,10.4 16.8,9.2 15.1,10.4 15.7,8.5 14.1,7.3 16.1,7.3" fill="#FFFFFF"/>
+                        </svg>
+                        <span class="hidden sm:inline">TR</span>
+                    </button>
+                    <button class="lang-btn flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-sm text-warmGray" data-lang="en" aria-label="English">
+                        <svg class="flag-icon" viewBox="0 0 24 16">
+                            <rect width="24" height="16" fill="#012169"/>
+                            <path d="M0,0 L24,16 M24,0 L0,16" stroke="#FFFFFF" stroke-width="2.4"/>
+                            <path d="M0,0 L24,16 M24,0 L0,16" stroke="#C8102E" stroke-width="1.2"/>
+                            <path d="M12,0 V16 M0,8 H24" stroke="#FFFFFF" stroke-width="4"/>
+                            <path d="M12,0 V16 M0,8 H24" stroke="#C8102E" stroke-width="2.4"/>
+                        </svg>
+                        <span class="hidden sm:inline">EN</span>
+                    </button>
+                    <button class="lang-btn flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-full text-sm text-warmGray" data-lang="es" aria-label="Español">
+                        <svg class="flag-icon" viewBox="0 0 24 16">
+                            <rect width="24" height="4" fill="#AA151B"/>
+                            <rect y="4" width="24" height="8" fill="#F1BF00"/>
+                            <rect y="12" width="24" height="4" fill="#AA151B"/>
+                        </svg>
+                        <span class="hidden sm:inline">ES</span>
+                    </button>
                 </div>
             </div>
-        </nav>
+        </div>
+    </header>
 
-        <!-- ═══ Hero ═══ -->
-        <header class="hero">
-            <div class="hero-bg">
-                <div class="hero-orb hero-orb--teal"></div>
-                <div class="hero-orb hero-orb--amber"></div>
-                <div class="hero-orb hero-orb--pink"></div>
-            </div>
-            <div class="hero-content">
-                <div class="hero-badge animate-up">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                    <span id="hero-badge-text">Yasal Belge</span>
+    <!-- Main Content -->
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="hero-gradient py-10 sm:py-14 lg:py-16">
+            <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur rounded-full px-4 py-2 mb-6 border border-border">
+                    <span class="w-2 h-2 bg-mint rounded-full animate-pulse"></span>
+                    <span class="text-sm text-warmGray" data-translate="lastUpdate">Son Güncelleme: 16 Şubat 2026</span>
                 </div>
-                <h1 class="hero-title animate-up delay-1" id="hero-title">Gizlilik Politikası</h1>
-                <p class="hero-desc animate-up delay-2" id="hero-desc">Verilerinizin güvenliği bizim için önceliktir. PureScan uygulamasını kullanırken verilerinizin nasıl işlendiğini şeffaf bir şekilde açıklıyoruz.</p>
-                <div class="hero-meta animate-up delay-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                    <span id="hero-date-label">Son Güncelleme:</span> <span>10.02.2026</span>
+                
+                <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-charcoal mb-4" data-translate="pageTitle">
+                    Gizlilik Politikası ve<br>
+                    <span class="text-coral">Yasal Bilgilendirme</span>
+                </h1>
+                
+                <p class="text-warmGray text-base sm:text-lg max-w-2xl mx-auto leading-relaxed" data-translate="pageIntro">
+                    Bu metin, PureScan Foods uygulamasını kullanırken kişisel verilerinizin nasıl toplandığını, işlendiğini ve korunduğunu açıklamak amacıyla hazırlanmıştır.
+                </p>
+            </div>
+        </section>
+
+        <!-- Decorative Line -->
+        <div class="decorative-line"></div>
+
+        <!-- Warning Banner -->
+        <section class="pt-4 pb-2 sm:pt-5 sm:pb-3 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="warning-card rounded-2xl p-5 sm:p-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-coral/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-base sm:text-lg font-semibold text-charcoal mb-2" data-translate="warningTitle">Önemli Tıbbi ve Yasal Uyarı</h3>
+                            <p class="text-sm sm:text-base text-warmGray leading-relaxed" data-translate="warningContent">
+                                PureScan Foods tıbbi cihaz değildir. Uygulama sonuçları tıbbi teşhis, tedavi önerisi veya kişiselleştirilmiş tıbbi reçete niteliği taşımaz. Alerjen, intolerans, kronik hastalık gibi hassas durumlarda ürünün fiziksel etiketini ve profesyonel sağlık uzmanı görüşünü esas almalısınız.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </header>
+        </section>
 
-        <!-- ═══ Disclaimer ═══ -->
-        <div class="disclaimer" id="disclaimer">⚠️ <strong>YASAL UYARI:</strong> PureScan tıbbi bir cihaz değildir. AI destekli analizler sadece kozmetik bilgilendirme amaçlıdır ve profesyonel tıbbi tavsiye yerine geçmez.</div>
+        <!-- Content Sections -->
+        <section class="py-4 sm:py-6 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto space-y-3 sm:space-y-4">
 
-        <!-- ═══ Main ═══ -->
-        <main class="main-content">
-            <div class="accordion-list" id="accordion-list">
-                <!-- JS renders here -->
+                <!-- Section 1: Service Scope -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-1">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="scope">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-navy/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section1Title">Hizmetin Kapsamı</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-scope">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray mb-4 text-sm sm:text-base" data-translate="section1Desc">PureScan Foods, kullanıcıların ürün içeriklerini analiz etmelerine yardımcı olan bir mobil uygulamadır:</p>
+                            <ul class="space-y-2 text-sm sm:text-base">
+                                <li class="custom-bullet text-warmGray" data-translate="scope1">Kamera ile tarama</li>
+                                <li class="custom-bullet text-warmGray" data-translate="scope2">Galeriden görsel yükleme</li>
+                                <li class="custom-bullet text-warmGray" data-translate="scope3">Barkod sorgulaması</li>
+                                <li class="custom-bullet text-warmGray" data-translate="scope4">Metin olarak içerik girişi</li>
+                            </ul>
+                            <p class="text-warmGray mt-4 text-sm sm:text-base" data-translate="section1Features">Uygulama, yapay zeka destekli yorumlar, içerik sınıflandırmaları, olası uyarılar ve kişisel profil uyumluluğu sunar.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 2: Data Categories -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-2">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="data">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-coral/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section2Title">Toplanan Veri Kategorileri</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-data">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 space-y-4">
+                            <div>
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base" data-translate="dataCat1">Hesap ve Kimlik Verileri</h4>
+                                <p class="text-warmGray text-sm sm:text-base" data-translate="dataCat1Desc">E-posta adresi, kullanıcı kimliği (UID), hesap türü</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base" data-translate="dataCat2">Profil ve Tercih Verileri</h4>
+                                <p class="text-warmGray text-sm sm:text-base" data-translate="dataCat2Desc">Beslenme tercihleri, alerjen tercihleri, yaşam evresi bilgileri, aile profilleri</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base" data-translate="dataCat3">İçerik Analizi Verileri</h4>
+                                <p class="text-warmGray text-sm sm:text-base" data-translate="dataCat3Desc">Ürün/etiket görselleri, içerik metinleri, barkod numaraları</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base" data-translate="dataCat4">Analiz ve Geçmiş Verileri</h4>
+                                <p class="text-warmGray text-sm sm:text-base" data-translate="dataCat4Desc">Ürün analiz sonuçları, puanlar, uyarılar, kullanım geçmişi</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base" data-translate="dataCat5">Teknik ve Operasyonel Veriler</h4>
+                                <p class="text-warmGray text-sm sm:text-base" data-translate="dataCat5Desc">Cihaz kimliği, kullanım sayaçları, hata kayıtları</p>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base" data-translate="dataCat6">Reklam ve Abonelik Verileri</h4>
+                                <p class="text-warmGray text-sm sm:text-base" data-translate="dataCat6Desc">Reklam teknik sinyalleri, satın alma işlem meta verileri</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 3: Processing Purposes -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-3">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="purposes">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-mint/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section3Title">Veri İşleme Amaçları</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-purposes">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <ul class="space-y-2 text-sm sm:text-base">
+                                <li class="custom-bullet text-warmGray" data-translate="purpose1">Uygulama işlevlerinin sunulması</li>
+                                <li class="custom-bullet text-warmGray" data-translate="purpose2">Hesap yönetimi ve oturum doğrulama</li>
+                                <li class="custom-bullet text-warmGray" data-translate="purpose3">Kullanıcıya özel deneyim ve öneriler</li>
+                                <li class="custom-bullet text-warmGray" data-translate="purpose4">Kullanım limitlerinin ve plan kurallarının uygulanması</li>
+                                <li class="custom-bullet text-warmGray" data-translate="purpose5">Güvenlik ve suistimal önleme</li>
+                                <li class="custom-bullet text-warmGray" data-translate="purpose6">Hata tespiti ve hizmet kalitesi iyileştirme</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 4: Legal Basis -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-4">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="legal">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section4Title">Hukuki Dayanaklar</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-legal">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <ul class="space-y-2 text-sm sm:text-base">
+                                <li class="custom-bullet text-warmGray" data-translate="legal1">Sözleşmenin ifası (hizmetin sunulması)</li>
+                                <li class="custom-bullet text-warmGray" data-translate="legal2">Meşru menfaat (güvenlik, hizmet geliştirme)</li>
+                                <li class="custom-bullet text-warmGray" data-translate="legal3">Açık rıza (mevzuatın gerekli gördüğü durumlarda)</li>
+                                <li class="custom-bullet text-warmGray" data-translate="legal4">Yasal yükümlülüklerin yerine getirilmesi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 5: Third Party Services -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-5">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="services">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-navy/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section5Title">Ucuncu Taraf Hizmetler</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-services">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0 space-y-3">
+                            <div class="p-3 bg-softGray/50 rounded-xl">
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base">Google Firebase</h4>
+                                <p class="text-warmGray text-xs sm:text-sm" data-translate="service1Desc">Kimlik doğrulama, veri saklama ve güvenli iş akışları</p>
+                            </div>
+                            <div class="p-3 bg-softGray/50 rounded-xl">
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base">Google Gemini AI</h4>
+                                <p class="text-warmGray text-xs sm:text-sm" data-translate="service2Desc">Görsel ve metin analizi</p>
+                            </div>
+                            <div class="p-3 bg-softGray/50 rounded-xl">
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base">OpenFoodFacts</h4>
+                                <p class="text-warmGray text-xs sm:text-sm" data-translate="service3Desc">Barkod tabanlı ürün bilgileri</p>
+                            </div>
+                            <div class="p-3 bg-softGray/50 rounded-xl">
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base">Google AdMob</h4>
+                                <p class="text-warmGray text-xs sm:text-sm" data-translate="service4Desc">Ücretsiz kullanıcılar için reklam gösterimi</p>
+                            </div>
+                            <div class="p-3 bg-softGray/50 rounded-xl">
+                                <h4 class="font-medium text-charcoal text-sm sm:text-base">RevenueCat</h4>
+                                <p class="text-warmGray text-xs sm:text-sm" data-translate="service5Desc">Abonelik paket yönetimi</p>
+                            </div>
+                            <p class="text-warmGray text-xs sm:text-sm italic" data-translate="paymentNote">Not: Ödeme kartı bilgileri uygulama tarafından doğrudan tutulmaz.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 6: International Transfer -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-6">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="transfer">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-coral/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section6Title">Uluslararasi Veri Aktarimi</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-transfer">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray text-sm sm:text-base" data-translate="transferDesc">Kullandığımız bulut servisleri nedeniyle veriler, bulunduğunuz ülke dışında bulunan sunucularda işlenebilir veya saklanabilir. Bu durumda ilgili hizmet sağlayıcıların teknik ve idari güvenlik önlemleri devreye alınır.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 7: Data Retention -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-7">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="retention">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-mint/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section7Title">Saklama Süreleri</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-retention">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray text-sm sm:text-base mb-3" data-translate="retentionDesc">Veriler, hizmetin sunulması için gerekli olduğu süre boyunca veya yasal yükümlülükler kapsamında gerekli süre kadar saklanır.</p>
+                            <ul class="space-y-2 text-sm sm:text-base">
+                                <li class="custom-bullet text-warmGray" data-translate="retention1">Hesap aktif olduğu sürece profil ve geçmiş verileri saklanabilir</li>
+                                <li class="custom-bullet text-warmGray" data-translate="retention2">Hizmet güvenliği için bazı teknik loglar sınırlı süre tutulabilir</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 8: User Rights -->
+                <article class="section-card rounded-2xl overflow-hidden stagger-8">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="rights">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section8Title">Kullanıcı Hakları</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-rights">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray text-sm sm:text-base mb-3" data-translate="rightsDesc">Kullanıcılar genel olarak şu haklara sahip olabilir:</p>
+                            <ul class="space-y-2 text-sm sm:text-base">
+                                <li class="custom-bullet text-warmGray" data-translate="right1">Veriye erişim talebi</li>
+                                <li class="custom-bullet text-warmGray" data-translate="right2">Düzeltme talebi</li>
+                                <li class="custom-bullet text-warmGray" data-translate="right3">Silme talebi</li>
+                                <li class="custom-bullet text-warmGray" data-translate="right4">İşlemeye itiraz</li>
+                                <li class="custom-bullet text-warmGray" data-translate="right5">Taşınabilirlik talebi</li>
+                                <li class="custom-bullet text-warmGray" data-translate="right6">Rızayı geri çekme</li>
+                            </ul>
+                            <p class="text-warmGray text-sm sm:text-base mt-4" data-translate="rightsNote">Talepleriniz için uygulama içi seçenekleri veya destek e-posta kanalını kullanabilirsiniz.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 9: Children's Privacy -->
+                <article class="section-card rounded-2xl overflow-hidden">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="children">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-navy/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section9Title">Çocukların Gizliliği</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-children">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray text-sm sm:text-base" data-translate="childrenDesc">PureScan Foods genel kullanıcı kitlesine yöneliktir ve 13 yaş altı çocuklardan bilerek kişisel veri toplama hedefi yoktur. İzinsiz veri işleme şüpheniz varsa bizimle iletişime geçebilirsiniz.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 10: Security -->
+                <article class="section-card rounded-2xl overflow-hidden">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="security">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-coral/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-coral" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section10Title">Güvenlik Önlemleri</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-security">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <ul class="space-y-2 text-sm sm:text-base">
+                                <li class="custom-bullet text-warmGray" data-translate="security1">Veri aktarımında SSL/TLS şifreleme</li>
+                                <li class="custom-bullet text-warmGray" data-translate="security2">Yetkilendirme ve erişim kontrol politikaları</li>
+                                <li class="custom-bullet text-warmGray" data-translate="security3">Sunucu tarafı kural kontrolleri</li>
+                                <li class="custom-bullet text-warmGray" data-translate="security4">İzinsiz erişim girişimlerine karşı izleme</li>
+                            </ul>
+                            <p class="text-warmGray text-xs sm:text-sm mt-4 italic" data-translate="securityNote">İnternet üzerinden yapılan hiçbir aktarım veya depolama sistemi %100 güvenlik garantisi veremez.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 11: Ads & Profiling -->
+                <article class="section-card rounded-2xl overflow-hidden">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="ads">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-mint/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-mint" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section11Title">Reklam ve Profil Oluşturma</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-ads">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray text-sm sm:text-base mb-3" data-translate="adsDesc">Ücretsiz sürümde reklam gösterimi olabilir. Reklam teknolojileri, ilgili platform kurallarına göre cihazla ilgili bazı teknik tanımlayıcıları kullanabilir.</p>
+                            <p class="text-warmGray text-sm sm:text-base" data-translate="adsNote">Reklam kişiselleştirme tercihleri cihaz/hesap ayarlarınızdan yönetilebilir.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Section 12: Policy Changes -->
+                <article class="section-card rounded-2xl overflow-hidden">
+                    <div class="accordion-header p-5 sm:p-6 flex items-center justify-between" data-accordion="changes">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                            <h2 class="text-base sm:text-lg font-semibold text-charcoal" data-translate="section12Title">Politika Değişiklikleri</h2>
+                        </div>
+                        <svg class="accordion-icon w-5 h-5 text-warmGray" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    <div class="accordion-content" id="accordion-changes">
+                        <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-0">
+                            <p class="text-warmGray text-sm sm:text-base" data-translate="changesDesc">Bu politika zaman içinde güncellenebilir. Önemli değişikliklerde uygulama içi bildirim, sürüm notu veya güncel metin yayını yapılabilir. Güncel metin her zaman en son yayımlanan sürümdür.</p>
+                        </div>
+                    </div>
+                </article>
+
             </div>
+        </section>
 
-            <!-- CTA Grid -->
-            <div class="cta-grid">
-                <!-- Contact Card -->
-                <div class="card animate-up">
-                    <div class="card-accent"></div>
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="20" height="16" x="2" y="4" rx="2" />
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        <!-- Contact Section -->
+        <section class="py-4 sm:py-5 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                    <div class="bg-white rounded-2xl p-4 sm:p-5 border border-border shadow-lg shadow-charcoal/5 text-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-coral to-coralLight rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                         </div>
-                        <h3 class="card-title" id="contact-title">İletişime Geçin</h3>
-                        <p class="card-desc" id="contact-desc">Gizlilik politikamız veya verileriniz hakkında sorularınız mı var?</p>
-                        <a href="mailto:septimus.labb@gmail.com" class="btn btn-dark">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="20" height="16" x="2" y="4" rx="2" />
-                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        <h2 class="text-lg sm:text-xl font-display font-bold text-charcoal mb-2" data-translate="contactTitle">İletişim</h2>
+                        <p class="text-warmGray mb-4 text-sm" data-translate="contactDesc">Gizlilik, veri işleme veya hak talepleriniz için bizimle iletişime geçebilirsiniz.</p>
+                        <a href="mailto:septimus.labb@gmail.com" class="btn-primary inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-semibold text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
                             septimus.labb@gmail.com
                         </a>
                     </div>
-                </div>
 
-                <!-- Google Play Card -->
-                <div class="card animate-up delay-1">
-                    <div class="card-accent" style="background: linear-gradient(90deg, #34d399, #059669)"></div>
-                    <div class="card-body">
-                        <div class="card-icon" style="background: #ecfdf5; color: #059669">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                    <div class="bg-white rounded-2xl p-4 sm:p-5 border border-border shadow-lg shadow-charcoal/5 text-center">
+                        <div class="w-12 h-12 bg-gradient-to-br from-mint to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M3.609 1.814a1 1 0 0 0-.609.92v18.532a1 1 0 0 0 .609.92L13.13 12 3.609 1.814zM5 4.18 11.26 12 5 19.82V4.18zm.94-.98L14.442 12l-8.502 8.8 9.728-5.41L20 12l-4.332-3.39L5.94 3.2zM16.73 9.31 18.5 12l-1.77 2.69L13.87 12l2.86-2.69z"/>
+                            </svg>
                         </div>
-                        <h3 class="card-title" id="play-title">Uygulamayı İndir</h3>
-                        <p class="card-desc" id="play-desc">PureScan Cosmetics'i Google Play Store'dan ücretsiz indirin.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.septimuslab.purescan" target="_blank" rel="noopener" class="btn btn-play">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                        <h2 class="text-lg sm:text-xl font-display font-bold text-charcoal mb-2" data-translate="downloadTitle">Uygulamayı İndir</h2>
+                        <p class="text-warmGray mb-4 text-sm" data-translate="downloadDesc">PureScan Foods'u Google Play'den hemen indirerek ürün içeriklerini saniyeler içinde analiz etmeye başlayın.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.septimuslab.purescan" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-semibold text-sm bg-gradient-to-r from-mint to-emerald-600 hover:opacity-95 transition">
+                            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M3.609 1.814a1 1 0 0 0-.609.92v18.532a1 1 0 0 0 .609.92L13.13 12 3.609 1.814zM5 4.18 11.26 12 5 19.82V4.18zm.94-.98L14.442 12l-8.502 8.8 9.728-5.41L20 12l-4.332-3.39L5.94 3.2zM16.73 9.31 18.5 12l-1.77 2.69L13.87 12l2.86-2.69z"/>
+                            </svg>
                             Google Play
                         </a>
                     </div>
                 </div>
             </div>
-        </main>
+        </section>
 
-        <!-- ═══ Footer ═══ -->
-        <footer class="footer">
-            <div class="footer-inner">
-                <div class="footer-brand">
-                    
-                    <a href="https://septimuslab.com" target="_blank" rel="noopener" class="footer-link" style="font-weight: 600; color: var(--slate-600)"> <img src="../assets/septimus.png" alt="SeptimusLab" /> </a>
+        <!-- Disclaimer -->
+        <section class="py-3 sm:py-4 px-4 sm:px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-softGray/50 rounded-2xl p-5 sm:p-6 text-center">
+                    <p class="text-warmGray text-xs sm:text-sm" data-translate="disclaimer">
+                        Uygulama sonuçları yalnızca bilgilendirme amaçlıdır. Tıbbi kararlar için sağlık profesyoneline danışın. Alerjen ve kritik içerikleri fiziksel etiket üzerinden doğrulayın.
+                    </p>
                 </div>
-                <p class="footer-copy">&copy; 2025 PureScan by <a href="https://septimuslab.com" target="_blank" rel="noopener" style="color: var(--brand-600); font-weight: 500">SeptimusLab</a>. <span id="footer-rights">Tüm Hakları Saklıdır.</span></p>
             </div>
-        </footer>
+        </section>
+    </main>
 
-        <!-- ═══ JavaScript ═══ -->
-        <script>
-            // ── Icons ──
-            const icons = {
-                data: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>',
-                ai: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>',
-                money: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>',
-                trash: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>',
-                users: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-                lock: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>',
-            };
+    <!-- Footer -->
+    <footer class="footer-gradient py-6 sm:py-8 px-4 sm:px-6 border-t border-border">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <img src="../assets/purescan.png" alt="PureScan Foods" class="w-10 h-10 rounded-lg">
+                    <div>
+                        <p class="text-lg sm:text-xl font-extrabold leading-none tracking-tight">
+                            <span class="text-charcoal">Pure</span><span class="text-coral">Scan</span>
+                        </p>
+                        <p class="text-sm font-display italic text-charcoal/90 leading-none mt-0">Foods</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-4">
+                    <img src="../assets/septimus.png" alt="SeptimusLab" class="w-12 h-12 rounded-xl">
+                </div>
+            </div>
+            
+            <div class="decorative-line my-4"></div>
+            
+            <p class="text-center text-xs text-warmGray">
+                &copy; 2026 PureScan Foods by SeptimusLab. <span data-translate="footerRights">Tüm Hakları Saklıdır.</span>
+            </p>
+        </div>
+    </footer>
 
-            // ── Content Data ──
-            const i18n = {
-                tr: {
-                    badge: "Yasal Belge",
-                    title: "Gizlilik Politikası",
-                    desc: "Verilerinizin güvenliği bizim için önceliktir. PureScan uygulamasını kullanırken verilerinizin nasıl işlendiğini şeffaf bir şekilde açıklıyoruz.",
-                    dateLabel: "Son Güncelleme:",
-                    disclaimer: "⚠️ <strong>YASAL UYARI:</strong> PureScan tıbbi bir cihaz değildir. AI destekli analizler sadece kozmetik bilgilendirme amaçlıdır ve profesyonel tıbbi tavsiye yerine geçmez.",
-                    contactTitle: "İletişime Geçin",
-                    contactDesc: "Gizlilik politikamız veya verileriniz hakkında sorularınız mı var?",
-                    playTitle: "Uygulamayı İndir",
-                    playDesc: "PureScan Cosmetics'i Google Play Store'dan ücretsiz indirin.",
-                    rights: "Tüm Hakları Saklıdır.",
-                    sections: [
-                        {
-                            icon: "data",
-                            title: "1. Toplanan Veriler ve Kullanım Amacı",
-                            html: "<p>Uygulama deneyiminizi iyileştirmek için şu verileri işleriz:</p><ul><li><strong>Görsel Veriler:</strong> İçerik analizi (OCR) ve cilt tipi tespiti için yüklediğiniz fotoğraflar.</li><li><strong>Biyometrik Veri (Yüz Analizi):</strong> Cilt tipinizi belirlemek için yüz fotoğrafınız anlık olarak işlenir. <strong>Bu fotoğraflar işlem bittiği anda sunucudan silinir ve asla kalıcı olarak saklanmaz.</strong></li><li><strong>Hesap Bilgileri:</strong> Eğer üye olursanız; e-posta adresiniz ve size özel atanan kullanıcı kimliğiniz (UID).</li><li><strong>Analiz Geçmişi:</strong> Tarattığınız ürünler ve aldığınız sonuçlar, geçmişe dönük inceleyebilmeniz için kaydedilir.</li></ul>",
-                        },
-                        {
-                            icon: "ai",
-                            title: "2. Veritabanı ve Üçüncü Taraf Hizmetler",
-                            html: "<p>Güvenilir ve küresel altyapılar kullanıyoruz:</p><ul><li><strong>Google Gemini AI (ABD):</strong> Fotoğraflarınız ve metinleriniz analiz için Google'ın yapay zeka servisine şifreli (HTTPS) olarak gönderilir. Google bu verileri kimliğinizle eşleştirmez.</li><li><strong>Firebase Firestore (Veritabanı):</strong> Analiz sonuçlarınız, tarama geçmişiniz ve kullanıcı profiliniz Google'ın güvenli bulut veritabanı Firestore'da şifreli olarak saklanır.</li><li><strong>Firebase Auth:</strong> Kimlik doğrulama işlemleriniz güvenli bir şekilde yönetilir.</li></ul>",
-                        },
-                        {
-                            icon: "money",
-                            title: "3. Reklamlar ve Abonelikler",
-                            html: "<p>Uygulamanın ücretsiz kalabilmesi için:</p><ul><li><strong>Google AdMob:</strong> Ücretsiz kullanıcılara alakalı reklamlar göstermek için cihaz reklam kimliğiniz (Advertising ID) kullanılabilir.</li><li><strong>RevenueCat:</strong> Premium abonelik satın alımları güvenli ödeme altyapıları üzerinden yönetilir. PureScan kredi kartı bilgilerinizi görmez ve saklamaz.</li></ul>",
-                        },
-                        {
-                            icon: "trash",
-                            title: "4. Hesap Silme ve Veri Kontrolü",
-                            html: '<p>Verileriniz üzerinde tam kontrol sahibisiniz:</p><div class="info-box"><p class="info-box-title">Hesap Silme:</p><p>Uygulama içinde <strong>"Ayarlar &gt; Hesabımı Sil"</strong> seçeneğini kullandığınızda, bulut veritabanımızdaki (Firestore) tüm verileriniz ve kimlik bilgileriniz kalıcı olarak silinir.</p></div><p class="text-muted">"Verileri Sıfırla" seçeneği, hesabınızı kapatmadan bu hesaba ait tüm verileri kalıcı olarak siler.</p>',
-                        },
-                        {
-                            icon: "users",
-                            title: "5. Genel İzleyici Kitlesi",
-                            html: "<p>PureScan genel izleyici kitlesine uygundur. 13 yaşın altındaki çocuklardan bilerek kişisel veri toplamıyoruz. Çocuğunuzun izniniz olmadan veri paylaştığını düşünüyorsanız lütfen bizimle iletişime geçin.</p>",
-                        },
-                        {
-                            icon: "lock",
-                            title: "6. Güvenlik",
-                            html: "<p>Verileriniz transfer edilirken endüstri standardı SSL/TLS şifreleme kullanılır. Veritabanına erişim, sadece yetkili kullanıcılar için katı güvenlik kuralları ile sınırlandırılmıştır.</p>",
-                        },
-                    ],
-                },
-                en: {
-                    badge: "Legal Document",
-                    title: "Privacy Policy",
-                    desc: "Your data security is our priority. We transparently explain how your data is processed when using the PureScan app.",
-                    dateLabel: "Last Updated:",
-                    disclaimer: "⚠️ <strong>LEGAL DISCLAIMER:</strong> PureScan is not a medical device. AI-powered analyses are for cosmetic information purposes only and do not substitute professional medical advice.",
-                    contactTitle: "Contact Us",
-                    contactDesc: "Questions about our privacy policy or your data?",
-                    playTitle: "Download App",
-                    playDesc: "Download PureScan Cosmetics from Google Play Store for free.",
-                    rights: "All Rights Reserved.",
-                    sections: [
-                        {
-                            icon: "data",
-                            title: "1. Data Collection & Purpose",
-                            html: "<p>We process the following data to improve your experience:</p><ul><li><strong>Visual Data:</strong> Photos uploaded for ingredient analysis (OCR) and skin type detection.</li><li><strong>Biometric Data (Face Analysis):</strong> Your face photo is processed instantly to determine skin type. <strong>These photos are deleted from the server immediately after processing and are never permanently stored.</strong></li><li><strong>Account Info:</strong> If you sign up; your email address and unique User ID (UID).</li><li><strong>Scan History:</strong> Products you scan and their results are saved so you can review them later.</li></ul>",
-                        },
-                        {
-                            icon: "ai",
-                            title: "2. Database & Third-Party Services",
-                            html: "<p>We use trusted global infrastructures:</p><ul><li><strong>Google Gemini AI (USA):</strong> Photos and text are sent encrypted (HTTPS) to Google's AI service. Google does not link this data to your identity.</li><li><strong>Firebase Firestore (Database):</strong> Your analysis results, history, and profile are stored encrypted in Google's secure cloud database, Firestore.</li><li><strong>Firebase Auth:</strong> Your authentication credentials are managed securely.</li></ul>",
-                        },
-                        {
-                            icon: "money",
-                            title: "3. Ads & Subscriptions",
-                            html: "<p>To keep the app free:</p><ul><li><strong>Google AdMob:</strong> For free users, your device's Advertising ID may be used to show relevant ads.</li><li><strong>RevenueCat:</strong> Premium subscription purchases are managed via secure payment infrastructures. PureScan does not see or store credit card details.</li></ul>",
-                        },
-                        {
-                            icon: "trash",
-                            title: "4. Account Deletion & Control",
-                            html: '<p>You have full control over your data:</p><div class="info-box"><p class="info-box-title">Account Deletion:</p><p>Using the <strong>"Settings &gt; Delete Account"</strong> option in the app permanently deletes all your data and credentials from our cloud database (Firestore).</p></div><p class="text-muted">The "Reset Data" option permanently deletes all data associated with this account without closing the account.</p>',
-                        },
-                        {
-                            icon: "users",
-                            title: "5. General Audience",
-                            html: "<p>PureScan is suitable for a general audience. We do not knowingly collect personal data from children under 13. If you believe your child has shared data without permission, please contact us.</p>",
-                        },
-                        {
-                            icon: "lock",
-                            title: "6. Security",
-                            html: "<p>We use industry-standard SSL/TLS encryption for data transfer. Database access is restricted to authorized users with strict security rules.</p>",
-                        },
-                    ],
-                },
-            };
-
-            // ── State ──
-            let currentLang = "tr";
-            let openIndex = null;
-
-            // ── Render ──
-            function render(lang) {
-                const d = i18n[lang];
-
-                // Hero
-                document.getElementById("hero-badge-text").textContent = d.badge;
-                document.getElementById("hero-title").textContent = d.title;
-                document.getElementById("hero-desc").textContent = d.desc;
-                document.getElementById("hero-date-label").textContent = d.dateLabel;
-
-                // Disclaimer
-                document.getElementById("disclaimer").innerHTML = d.disclaimer;
-
-                // CTA Cards
-                document.getElementById("contact-title").textContent = d.contactTitle;
-                document.getElementById("contact-desc").textContent = d.contactDesc;
-                document.getElementById("play-title").textContent = d.playTitle;
-                document.getElementById("play-desc").textContent = d.playDesc;
-
-                // Footer
-                document.getElementById("footer-rights").textContent = d.rights;
-
-                // Accordion
-                const list = document.getElementById("accordion-list");
-                list.innerHTML = "";
-
-                d.sections.forEach(function (section, i) {
-                    var item = document.createElement("div");
-                    item.className = "accordion-item animate-up";
-                    item.style.animationDelay = i * 0.08 + "s";
-                    if (openIndex === i) item.classList.add("open");
-
-                    item.innerHTML =
-                        '<button class="accordion-trigger" data-index="' +
-                        i +
-                        '">' +
-                        '<div class="accordion-trigger-left">' +
-                        '<div class="accordion-icon-wrap">' +
-                        (icons[section.icon] || icons.data) +
-                        "</div>" +
-                        '<span class="accordion-title">' +
-                        section.title +
-                        "</span>" +
-                        "</div>" +
-                        '<div class="accordion-chevron">' +
-                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
-                        "</div>" +
-                        "</button>" +
-                        '<div class="accordion-body">' +
-                        '<div class="accordion-body-inner">' +
-                        section.html +
-                        "</div>" +
-                        "</div>";
-
-                    list.appendChild(item);
-                });
-
-                // Re-bind accordion triggers
-                document.querySelectorAll(".accordion-trigger").forEach(function (btn) {
-                    btn.addEventListener("click", function () {
-                        var idx = parseInt(this.getAttribute("data-index"));
-                        toggleAccordion(idx);
-                    });
-                });
+    <script>
+        // Translations
+        const translations = {
+            tr: {
+                headerSubtitle: "Gizlilik Politikası",
+                lastUpdate: "Son Güncelleme: 16 Şubat 2026",
+                pageTitle: "Gizlilik Politikası ve",
+                pageTitleAccent: "Yasal Bilgilendirme",
+                pageIntro: "Bu metin, PureScan Foods uygulamasını kullanırken kişisel verilerinizin nasıl toplandığını, işlendiğini ve korunduğunu açıklamak amacıyla hazırlanmıştır.",
+                warningTitle: "Önemli Tıbbi ve Yasal Uyarı",
+                warningContent: "PureScan Foods tıbbi cihaz değildir. Uygulama sonuçları tıbbi teşhis, tedavi önerisi veya kişiselleştirilmiş tıbbi reçete niteliği taşımaz. Alerjen, intolerans, kronik hastalık gibi hassas durumlarda ürünün fiziksel etiketini ve profesyonel sağlık uzmanı görüşünü esas almalısınız.",
+                section1Title: "Hizmetin Kapsamı",
+                section1Desc: "PureScan Foods, kullanıcıların ürün içeriklerini analiz etmelerine yardımcı olan bir mobil uygulamadır:",
+                scope1: "Kamera ile tarama",
+                scope2: "Galeriden görsel yükleme",
+                scope3: "Barkod sorgulaması",
+                scope4: "Metin olarak içerik girişi",
+                section1Features: "Uygulama, yapay zeka destekli yorumlar, içerik sınıflandırmaları, olası uyarılar ve kişisel profil uyumluluğu sunar.",
+                section2Title: "Toplanan Veri Kategorileri",
+                dataCat1: "Hesap ve Kimlik Verileri",
+                dataCat1Desc: "E-posta adresi, kullanıcı kimliği (UID), hesap türü",
+                dataCat2: "Profil ve Tercih Verileri",
+                dataCat2Desc: "Beslenme tercihleri, alerjen tercihleri, yaşam evresi bilgileri, aile profilleri",
+                dataCat3: "İçerik Analizi Verileri",
+                dataCat3Desc: "Ürün/etiket görselleri, içerik metinleri, barkod numaraları",
+                dataCat4: "Analiz ve Geçmiş Verileri",
+                dataCat4Desc: "Ürün analiz sonuçları, puanlar, uyarılar, kullanım geçmişi",
+                dataCat5: "Teknik ve Operasyonel Veriler",
+                dataCat5Desc: "Cihaz kimliği, kullanım sayaçları, hata kayıtları",
+                dataCat6: "Reklam ve Abonelik Verileri",
+                dataCat6Desc: "Reklam teknik sinyalleri, satın alma işlem meta verileri",
+                section3Title: "Veri İşleme Amaçları",
+                purpose1: "Uygulama işlevlerinin sunulması",
+                purpose2: "Hesap yönetimi ve oturum doğrulama",
+                purpose3: "Kullanıcıya özel deneyim ve öneriler",
+                purpose4: "Kullanım limitlerinin ve plan kurallarının uygulanması",
+                purpose5: "Güvenlik ve suistimal önleme",
+                purpose6: "Hata tespiti ve hizmet kalitesi iyileştirme",
+                section4Title: "Hukuki Dayanaklar",
+                legal1: "Sözleşmenin ifası (hizmetin sunulması)",
+                legal2: "Meşru menfaat (güvenlik, hizmet geliştirme)",
+                legal3: "Açık rıza (mevzuatın gerekli gördüğü durumlarda)",
+                legal4: "Yasal yükümlülüklerin yerine getirilmesi",
+                section5Title: "Üçüncü Taraf Hizmetler",
+                service1Desc: "Kimlik doğrulama, veri saklama ve güvenli iş akışları",
+                service2Desc: "Görsel ve metin analizi",
+                service3Desc: "Barkod tabanlı ürün bilgileri",
+                service4Desc: "Ücretsiz kullanıcılar için reklam gösterimi",
+                service5Desc: "Abonelik paket yönetimi",
+                paymentNote: "Not: Ödeme kartı bilgileri uygulama tarafından doğrudan tutulmaz.",
+                section6Title: "Uluslararası Veri Aktarımı",
+                transferDesc: "Kullandığımız bulut servisleri nedeniyle veriler, bulunduğunuz ülke dışında bulunan sunucularda işlenebilir veya saklanabilir. Bu durumda ilgili hizmet sağlayıcıların teknik ve idari güvenlik önlemleri devreye alınır.",
+                section7Title: "Saklama Süreleri",
+                retentionDesc: "Veriler, hizmetin sunulması için gerekli olduğu süre boyunca veya yasal yükümlülükler kapsamında gerekli süre kadar saklanır.",
+                retention1: "Hesap aktif olduğu sürece profil ve geçmiş verileri saklanabilir",
+                retention2: "Hizmet güvenliği için bazı teknik loglar sınırlı süre tutulabilir",
+                section8Title: "Kullanıcı Hakları",
+                rightsDesc: "Kullanıcılar genel olarak şu haklara sahip olabilir:",
+                right1: "Veriye erişim talebi",
+                right2: "Düzeltme talebi",
+                right3: "Silme talebi",
+                right4: "İşlemeye itiraz",
+                right5: "Taşınabilirlik talebi",
+                right6: "Rızayı geri çekme",
+                rightsNote: "Talepleriniz için uygulama içi seçenekleri veya destek e-posta kanalını kullanabilirsiniz.",
+                section9Title: "Çocukların Gizliliği",
+                childrenDesc: "PureScan Foods genel kullanıcı kitlesine yöneliktir ve 13 yaş altı çocuklardan bilerek kişisel veri toplama hedefi yoktur. İzinsiz veri işleme şüpheniz varsa bizimle iletişime geçebilirsiniz.",
+                section10Title: "Güvenlik Önlemleri",
+                security1: "Veri aktarımında SSL/TLS şifreleme",
+                security2: "Yetkilendirme ve erişim kontrol politikaları",
+                security3: "Sunucu tarafı kural kontrolleri",
+                security4: "İzinsiz erişim girişimlerine karşı izleme",
+                securityNote: "İnternet üzerinden yapılan hiçbir aktarım veya depolama sistemi %100 güvenlik garantisi veremez.",
+                section11Title: "Reklam ve Profil Oluşturma",
+                adsDesc: "Ücretsiz sürümde reklam gösterimi olabilir. Reklam teknolojileri, ilgili platform kurallarına göre cihazla ilgili bazı teknik tanımlayıcıları kullanabilir.",
+                adsNote: "Reklam kişiselleştirme tercihleri cihaz/hesap ayarlarınızdan yönetilebilir.",
+                section12Title: "Politika Değişiklikleri",
+                changesDesc: "Bu politika zaman içinde güncellenebilir. Önemli değişikliklerde uygulama içi bildirim, sürüm notu veya güncel metin yayını yapılabilir. Güncel metin her zaman en son yayımlanan sürümdür.",
+                contactTitle: "İletişim",
+                contactDesc: "Gizlilik, veri işleme veya hak talepleriniz için bizimle iletişime geçebilirsiniz.",
+                downloadTitle: "Uygulamayı İndir",
+                downloadDesc: "PureScan Foods'u Google Play'den hemen indirerek ürün içeriklerini saniyeler içinde analiz etmeye başlayın.",
+                disclaimer: "Uygulama sonuçları yalnızca bilgilendirme amaçlıdır. Tıbbi kararlar için sağlık profesyoneline danışın. Alerjen ve kritik içerikleri fiziksel etiket üzerinden doğrulayın.",
+                footerBy: "by SeptimusLab",
+                footerRights: "Tüm Hakları Saklıdır."
+            },
+            en: {
+                headerSubtitle: "Privacy Policy",
+                lastUpdate: "Last Updated: February 16, 2026",
+                pageTitle: "Privacy Policy and",
+                pageTitleAccent: "Legal Information",
+                pageIntro: "This document explains how your personal data is collected, processed, and protected when using the PureScan Foods application.",
+                warningTitle: "Important Medical and Legal Disclaimer",
+                warningContent: "PureScan Foods is not a medical device. The application results do not constitute medical diagnosis, treatment recommendations, or personalized medical prescriptions. For sensitive conditions such as allergies, intolerances, or chronic diseases, always rely on the physical product label and consult a healthcare professional.",
+                section1Title: "Scope of Service",
+                section1Desc: "PureScan Foods is a mobile application that helps users analyze product contents through:",
+                scope1: "Camera scanning",
+                scope2: "Image upload from gallery",
+                scope3: "Barcode lookup",
+                scope4: "Manual text entry",
+                section1Features: "The application provides AI-powered analysis, content classifications, potential warnings, and personal profile compatibility.",
+                section2Title: "Data Categories Collected",
+                dataCat1: "Account and Identity Data",
+                dataCat1Desc: "Email address, user ID (UID), account type",
+                dataCat2: "Profile and Preference Data",
+                dataCat2Desc: "Dietary preferences, allergen preferences, life stage information, family profiles",
+                dataCat3: "Content Analysis Data",
+                dataCat3Desc: "Product/label images, content text, barcode numbers",
+                dataCat4: "Analysis and History Data",
+                dataCat4Desc: "Product analysis results, scores, warnings, usage history",
+                dataCat5: "Technical and Operational Data",
+                dataCat5Desc: "Device ID, usage counters, error logs",
+                dataCat6: "Advertising and Subscription Data",
+                dataCat6Desc: "Ad technical signals, purchase transaction metadata",
+                section3Title: "Data Processing Purposes",
+                purpose1: "Providing application functionality",
+                purpose2: "Account management and session verification",
+                purpose3: "Personalized experience and recommendations",
+                purpose4: "Enforcing usage limits and plan rules",
+                purpose5: "Security and abuse prevention",
+                purpose6: "Error detection and service quality improvement",
+                section4Title: "Legal Basis",
+                legal1: "Contract fulfillment (service provision)",
+                legal2: "Legitimate interest (security, service development)",
+                legal3: "Explicit consent (where required by law)",
+                legal4: "Fulfillment of legal obligations",
+                section5Title: "Third-Party Services",
+                service1Desc: "Authentication, data storage, and secure workflows",
+                service2Desc: "Image and text analysis",
+                service3Desc: "Barcode-based product information",
+                service4Desc: "Ad display for free users",
+                service5Desc: "Subscription package management",
+                paymentNote: "Note: Payment card information is not stored directly by the application.",
+                section6Title: "International Data Transfer",
+                transferDesc: "Due to the cloud services we use, data may be processed or stored on servers located outside your country. In such cases, technical and administrative security measures of the relevant service providers are implemented.",
+                section7Title: "Data Retention Periods",
+                retentionDesc: "Data is retained for as long as necessary to provide the service or as required by legal obligations.",
+                retention1: "Profile and history data may be retained while the account is active",
+                retention2: "Some technical logs may be kept for a limited time for service security",
+                section8Title: "User Rights",
+                rightsDesc: "Users generally have the following rights:",
+                right1: "Right to access data",
+                right2: "Right to rectification",
+                right3: "Right to erasure",
+                right4: "Right to object to processing",
+                right5: "Right to data portability",
+                right6: "Right to withdraw consent",
+                rightsNote: "You can submit requests through in-app options or the support email channel.",
+                section9Title: "Children's Privacy",
+                childrenDesc: "PureScan Foods is intended for general users and does not knowingly collect personal data from children under 13. If you suspect unauthorized data processing, please contact us.",
+                section10Title: "Security Measures",
+                security1: "SSL/TLS encryption for data transmission",
+                security2: "Authorization and access control policies",
+                security3: "Server-side rule checks",
+                security4: "Monitoring against unauthorized access attempts",
+                securityNote: "No internet transmission or storage system can guarantee 100% security.",
+                section11Title: "Advertising and Profiling",
+                adsDesc: "The free version may display advertisements. Ad technologies may use certain device-related technical identifiers according to relevant platform rules.",
+                adsNote: "Ad personalization preferences can be managed from your device/account settings.",
+                section12Title: "Policy Changes",
+                changesDesc: "This policy may be updated over time. Significant changes will be communicated through in-app notifications, release notes, or updated text publication. The current text is always the most recently published version.",
+                contactTitle: "Contact",
+                contactDesc: "For privacy, data processing, or rights requests, please contact us.",
+                downloadTitle: "Download App",
+                downloadDesc: "Download PureScan Foods from Google Play and start scanning product contents in seconds.",
+                disclaimer: "Application results are for informational purposes only. Consult a healthcare professional for medical decisions. Verify allergens and critical contents from the physical label.",
+                footerBy: "by SeptimusLab",
+                footerRights: "All Rights Reserved."
+            },
+            es: {
+                headerSubtitle: "Política de Privacidad",
+                lastUpdate: "Última Actualización: 16 de Febrero de 2026",
+                pageTitle: "Política de Privacidad y",
+                pageTitleAccent: "Información Legal",
+                pageIntro: "Este documento explica cómo se recopilan, procesan y protegen sus datos personales al utilizar la aplicación PureScan Foods.",
+                warningTitle: "Aviso Médico y Legal Importante",
+                warningContent: "PureScan Foods no es un dispositivo médico. Los resultados de la aplicación no constituyen diagnóstico médico, recomendaciones de tratamiento ni recetas médicas personalizadas. Para condiciones sensibles como alergias, intolerancias o enfermedades crónicas, siempre confíe en la etiqueta física del producto y consulte a un profesional de la salud.",
+                section1Title: "Alcance del Servicio",
+                section1Desc: "PureScan Foods es una aplicación móvil que ayuda a los usuarios a analizar el contenido de productos mediante:",
+                scope1: "Escaneo con cámara",
+                scope2: "Carga de imágenes desde la galería",
+                scope3: "Búsqueda por código de barras",
+                scope4: "Entrada manual de texto",
+                section1Features: "La aplicación proporciona análisis con IA, clasificaciones de contenido, advertencias potenciales y compatibilidad con el perfil personal.",
+                section2Title: "Categorías de Datos Recopilados",
+                dataCat1: "Datos de Cuenta e Identidad",
+                dataCat1Desc: "Dirección de correo electrónico, ID de usuario (UID), tipo de cuenta",
+                dataCat2: "Datos de Perfil y Preferencias",
+                dataCat2Desc: "Preferencias dietéticas, preferencias de alérgenos, información de etapa de vida, perfiles familiares",
+                dataCat3: "Datos de Análisis de Contenido",
+                dataCat3Desc: "Imágenes de productos/etiquetas, texto de contenido, números de código de barras",
+                dataCat4: "Datos de Análisis e Historial",
+                dataCat4Desc: "Resultados de análisis de productos, puntuaciones, advertencias, historial de uso",
+                dataCat5: "Datos Técnicos y Operativos",
+                dataCat5Desc: "ID del dispositivo, contadores de uso, registros de errores",
+                dataCat6: "Datos de Publicidad y Suscripción",
+                dataCat6Desc: "Señales técnicas de anuncios, metadatos de transacciones de compra",
+                section3Title: "Fines del Procesamiento de Datos",
+                purpose1: "Proporcionar funcionalidad de la aplicación",
+                purpose2: "Gestión de cuenta y verificación de sesión",
+                purpose3: "Experiencia personalizada y recomendaciones",
+                purpose4: "Aplicar límites de uso y reglas del plan",
+                purpose5: "Seguridad y prevención de abusos",
+                purpose6: "Detección de errores y mejora de calidad del servicio",
+                section4Title: "Base Legal",
+                legal1: "Cumplimiento del contrato (prestación del servicio)",
+                legal2: "Interés legítimo (seguridad, desarrollo del servicio)",
+                legal3: "Consentimiento explícito (cuando lo exija la ley)",
+                legal4: "Cumplimiento de obligaciones legales",
+                section5Title: "Servicios de Terceros",
+                service1Desc: "Autenticación, almacenamiento de datos y flujos de trabajo seguros",
+                service2Desc: "Análisis de imágenes y texto",
+                service3Desc: "Información de productos basada en códigos de barras",
+                service4Desc: "Visualización de anuncios para usuarios gratuitos",
+                service5Desc: "Gestión de paquetes de suscripción",
+                paymentNote: "Nota: La información de la tarjeta de pago no se almacena directamente por la aplicación.",
+                section6Title: "Transferencia Internacional de Datos",
+                transferDesc: "Debido a los servicios en la nube que utilizamos, los datos pueden procesarse o almacenarse en servidores ubicados fuera de su país. En tales casos, se implementan medidas de seguridad técnicas y administrativas de los proveedores de servicios correspondientes.",
+                section7Title: "Períodos de Retención de Datos",
+                retentionDesc: "Los datos se conservan mientras sea necesario para proporcionar el servicio o según lo exijan las obligaciones legales.",
+                retention1: "Los datos de perfil e historial pueden conservarse mientras la cuenta esté activa",
+                retention2: "Algunos registros técnicos pueden mantenerse por tiempo limitado para la seguridad del servicio",
+                section8Title: "Derechos del Usuario",
+                rightsDesc: "Los usuarios generalmente tienen los siguientes derechos:",
+                right1: "Derecho de acceso a los datos",
+                right2: "Derecho de rectificación",
+                right3: "Derecho de supresión",
+                right4: "Derecho a oponerse al procesamiento",
+                right5: "Derecho a la portabilidad de datos",
+                right6: "Derecho a retirar el consentimiento",
+                rightsNote: "Puede presentar solicitudes a través de las opciones en la aplicación o el canal de correo electrónico de soporte.",
+                section9Title: "Privacidad de los Menores",
+                childrenDesc: "PureScan Foods está destinado a usuarios generales y no recopila intencionalmente datos personales de niños menores de 13 años. Si sospecha de procesamiento de datos no autorizado, contáctenos.",
+                section10Title: "Medidas de Seguridad",
+                security1: "Cifrado SSL/TLS para transmisión de datos",
+                security2: "Políticas de autorización y control de acceso",
+                security3: "Verificaciones de reglas del lado del servidor",
+                security4: "Monitoreo contra intentos de acceso no autorizado",
+                securityNote: "Ningún sistema de transmisión o almacenamiento por internet puede garantizar seguridad al 100%.",
+                section11Title: "Publicidad y Perfilado",
+                adsDesc: "La versión gratuita puede mostrar anuncios. Las tecnologías publicitarias pueden usar ciertos identificadores técnicos relacionados con el dispositivo según las reglas de la plataforma correspondiente.",
+                adsNote: "Las preferencias de personalización de anuncios se pueden gestionar desde la configuración de su dispositivo/cuenta.",
+                section12Title: "Cambios en la Política",
+                changesDesc: "Esta política puede actualizarse con el tiempo. Los cambios significativos se comunicarán a través de notificaciones en la aplicación, notas de versión o publicación de texto actualizado. El texto actual es siempre la versión publicada más recientemente.",
+                contactTitle: "Contacto",
+                contactDesc: "Para consultas de privacidad, procesamiento de datos o solicitudes de derechos, contáctenos.",
+                downloadTitle: "Descargar la App",
+                downloadDesc: "Descargue PureScan Foods desde Google Play y comience a analizar productos en segundos.",
+                disclaimer: "Los resultados de la aplicación son solo informativos. Consulte a un profesional de la salud para decisiones médicas. Verifique los alérgenos y contenidos críticos en la etiqueta física.",
+                footerBy: "por SeptimusLab",
+                footerRights: "Todos los Derechos Reservados."
             }
+        };
 
-            function toggleAccordion(idx) {
-                var items = document.querySelectorAll(".accordion-item");
-                items.forEach(function (item, i) {
-                    if (i === idx) {
-                        item.classList.toggle("open");
-                        openIndex = item.classList.contains("open") ? idx : null;
-                    } else {
-                        item.classList.remove("open");
+        let currentLang = 'tr';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initParticles();
+            initLanguageSwitcher();
+            initAccordions();
+            initScrollReveal();
+        });
+
+        // Particles
+        function initParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            
+            const particleCount = 15;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Language Switcher
+        function initLanguageSwitcher() {
+            const buttons = document.querySelectorAll('.lang-btn');
+            
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.dataset.lang;
+                    setLanguage(lang);
+                    
+                    buttons.forEach(b => {
+                        b.classList.remove('active');
+                        b.classList.add('text-warmGray');
+                    });
+                    this.classList.add('active');
+                    this.classList.remove('text-warmGray');
+                });
+            });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.dataset.translate;
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+            
+            document.documentElement.lang = lang;
+        }
+
+        // Accordions
+        function initAccordions() {
+            const headers = document.querySelectorAll('.accordion-header');
+            
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const accordionId = this.dataset.accordion;
+                    const content = document.getElementById('accordion-' + accordionId);
+                    const isOpen = content.classList.contains('open');
+                    
+                    // Close all others
+                    document.querySelectorAll('.accordion-content').forEach(c => {
+                        c.classList.remove('open');
+                    });
+                    document.querySelectorAll('.accordion-header').forEach(h => {
+                        h.classList.remove('active');
+                    });
+                    
+                    // Toggle current
+                    if (!isOpen) {
+                        content.classList.add('open');
+                        this.classList.add('active');
                     }
                 });
+            });
+        }
+
+        // Scroll Reveal
+        function initScrollReveal() {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            
+            if (prefersReducedMotion) {
+                document.querySelectorAll('.section-card').forEach(card => {
+                    card.classList.add('visible');
+                });
+                return;
             }
 
-            // ── Language Switch ──
-            var btnTr = document.getElementById("btn-tr");
-            var btnEn = document.getElementById("btn-en");
-
-            function switchLang(lang) {
-                currentLang = lang;
-                openIndex = null;
-
-                btnTr.classList.toggle("active", lang === "tr");
-                btnEn.classList.toggle("active", lang === "en");
-
-                document.documentElement.lang = lang;
-
-                // Smooth transition
-                var main = document.querySelector(".main-content");
-                var hero = document.querySelector(".hero");
-                main.style.opacity = "0";
-                hero.style.opacity = "0";
-                main.style.transition = "opacity 0.2s ease";
-                hero.style.transition = "opacity 0.2s ease";
-
-                setTimeout(function () {
-                    render(lang);
-                    main.style.opacity = "1";
-                    hero.style.opacity = "1";
-                }, 200);
-            }
-
-            btnTr.addEventListener("click", function () {
-                switchLang("tr");
-            });
-            btnEn.addEventListener("click", function () {
-                switchLang("en");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
 
-            // ── Navbar scroll shadow ──
-            window.addEventListener("scroll", function () {
-                document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 10);
+            document.querySelectorAll('.section-card').forEach(card => {
+                observer.observe(card);
             });
-
-            // ── Init ──
-            render("tr");
-        </script>
-    </body>
+        }
+    </script>
+</body>
 </html>
+
+
+
+
