@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PureScan Foods - Septimus Lab</title>
-    <meta name="description" content="PureScan Foods - Gida iceriklerinizi aninda analiz edin. Analyze food ingredients instantly.">
+    <meta name="description" content="PureScan Foods - Gıda içeriklerinizi anında analiz edin. Analyze food ingredients instantly.">
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,7 +122,7 @@
         <div class="app-icon"><img src="assets/purescan.png" alt="PureScan Foods"></div>
         <h1 class="app-name">PureScan Foods</h1>
         <div class="desc">
-            <p class="desc-tr">Gida iceriklerini saniyeler icinde analiz edin.<br>Tukettiginiz urunleri daha bilincli degerlendirin.</p>
+            <p class="desc-tr">Gıda içeriklerini saniyeler içinde analiz edin.<br>Tükettiğiniz ürünleri daha bilinçli değerlendirin.</p>
             <p class="desc-en">Analyze food ingredients instantly.</p>
         </div>
 
@@ -139,7 +139,7 @@
 
     <script>
         // ====== CONFIG ======
-        // App Store linki yayina girince doldur: 'https://apps.apple.com/app/idXXXXXXXXXX'
+        // App Store linki yayına girince doldur: 'https://apps.apple.com/app/idXXXXXXXXXX'
         const STORE = {
             play: 'https://play.google.com/store/apps/details?id=com.purescan.foods',
             appStore: ''
@@ -153,7 +153,7 @@
         const t = {
             apple: { small: 'Download on the', big: 'App Store' },
             play:  { small: 'GET IT ON', big: 'Google Play' },
-            soon:  { small: 'Cok yakinda', big: 'App Store' }
+            soon:  { small: 'Çok yakında', big: 'App Store' }
         };
 
         function btn(href, iconHtml, small, big, opts) {
@@ -184,7 +184,7 @@
             : btn('', APPLE_ICON, t.soon.small, t.soon.big, { disabled: true });
         const playBtn = btn(STORE.play, PLAY_ICON, t.play.small, t.play.big, { highlight: isAndroid });
 
-        // iOS kullanicisina once App Store'u goster; Android'e once Play'i
+        // iOS kullanıcısına önce App Store'u göster; Android'e önce Play'i
         document.getElementById('stores').innerHTML = isIOS ? (appleBtn + playBtn) : (playBtn + appleBtn);
 
         // ====== AUTO REDIRECT (sadece bu cihaz icin gecerli mağaza varsa) ======
@@ -194,7 +194,7 @@
         if (target) {
             let sec = AUTO_REDIRECT_SECONDS;
             const C = 2 * Math.PI * 7;
-            redirectEl.innerHTML = '<div class="timer"><svg viewBox="0 0 18 18"><circle class="timer-track" cx="9" cy="9" r="7"/><circle class="timer-progress" id="tc" cx="9" cy="9" r="7"/></svg><span id="cnt">' + sec + '</span></div><span>Yonlendiriliyor / Redirecting...</span>';
+            redirectEl.innerHTML = '<div class="timer"><svg viewBox="0 0 18 18"><circle class="timer-track" cx="9" cy="9" r="7"/><circle class="timer-progress" id="tc" cx="9" cy="9" r="7"/></svg><span id="cnt">' + sec + '</span></div><span>Yönlendiriliyor / Redirecting...</span>';
             const circle = document.getElementById('tc');
             const cnt = document.getElementById('cnt');
             circle.style.strokeDasharray = C; circle.style.strokeDashoffset = '0';
@@ -204,10 +204,10 @@
                 if (sec <= 0) { clearInterval(tick); window.location.href = target; }
             }, 1000);
         } else {
-            // Otomatik yonlendirme yok (iOS link yok / masaustu) -> kullanici secsin
+            // Otomatik yönlendirme yok (iOS link yok / masaüstü) -> kullanıcı seçsin
             chooseEl.textContent = isIOS
-                ? 'App Store surumu cok yakinda. / Coming soon to the App Store.'
-                : 'Magazanizi secin / Choose your store';
+                ? 'App Store sürümü çok yakında. / Coming soon to the App Store.'
+                : 'Mağazanızı seçin / Choose your store';
         }
     </script>
 </body>
