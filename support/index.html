@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PureScan Foods - Destek | Support | Soporte</title>
+        <meta name="description" content="PureScan Foods destek ve sık sorulan sorular. PureScan Foods support and FAQ. Soporte y preguntas frecuentes de PureScan Foods." />
+        <link rel="icon" href="../assets/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            :root {
+                --brand-50: #fff7ed;
+                --brand-100: #ffedd5;
+                --brand-200: #fed7aa;
+                --brand-300: #fdba74;
+                --brand-400: #fb923c;
+                --brand-500: #f97316;
+                --brand-600: #ea580c;
+                --brand-700: #c2410c;
+                --brand-800: #9a3412;
+                --brand-900: #7c2d12;
+
+                --slate-50: #f8fafc;
+                --slate-100: #f1f5f9;
+                --slate-200: #e2e8f0;
+                --slate-300: #cbd5e1;
+                --slate-400: #94a3b8;
+                --slate-500: #64748b;
+                --slate-600: #475569;
+                --slate-700: #334155;
+                --slate-800: #1e293b;
+                --slate-900: #0f172a;
+
+                --orange-50: #fff7ed;
+                --orange-100: #ffedd5;
+                --orange-600: #ea580c;
+                --orange-700: #c2410c;
+                --orange-800: #9a3412;
+
+                --radius-sm: 8px;
+                --radius-md: 12px;
+                --radius-lg: 16px;
+                --radius-xl: 24px;
+                --radius-full: 9999px;
+
+                --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+                --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+                --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.08);
+                --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.1);
+
+                --font-display: "Outfit", sans-serif;
+                --font-body: "DM Sans", sans-serif;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                font-family: var(--font-body);
+                background: var(--slate-50);
+                color: var(--slate-700);
+                line-height: 1.7;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            ::selection {
+                background: var(--brand-100);
+                color: var(--brand-900);
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            img {
+                display: block;
+                max-width: 100%;
+            }
+
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+            @keyframes pulseGlow {
+                0%,
+                100% {
+                    opacity: 0.4;
+                }
+                50% {
+                    opacity: 0.7;
+                }
+            }
+
+            .animate-up {
+                animation: fadeInUp 0.6s ease-out both;
+            }
+            .animate-fade {
+                animation: fadeIn 0.5s ease-out both;
+            }
+            .delay-1 {
+                animation-delay: 0.1s;
+            }
+            .delay-2 {
+                animation-delay: 0.2s;
+            }
+            .delay-3 {
+                animation-delay: 0.3s;
+            }
+
+            .navbar {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                background: rgba(255, 255, 255, 0.92);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                border-bottom: 1px solid var(--slate-200);
+                transition: box-shadow 0.3s ease;
+            }
+            .navbar.scrolled {
+                box-shadow: 0 1px 20px rgba(0, 0, 0, 0.06);
+            }
+            .navbar-inner {
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 0 24px;
+                height: 64px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+            }
+            .brand-logo {
+                width: 40px;
+                height: 40px;
+                border-radius: var(--radius-md);
+                object-fit: cover;
+                box-shadow: var(--shadow-sm);
+                transition: transform 0.3s ease;
+            }
+            .brand:hover .brand-logo {
+                transform: scale(1.05);
+            }
+            .brand-text {
+                display: flex;
+                flex-direction: column;
+            }
+            .brand-name {
+                font-family: var(--font-display);
+                font-weight: 800;
+                font-size: 1.2rem;
+                color: var(--slate-900);
+                letter-spacing: -0.02em;
+                line-height: 1.1;
+            }
+            .brand-name span {
+                color: var(--brand-600);
+            }
+            .brand-subtitle {
+                font-size: 0.6rem;
+                color: var(--slate-400);
+                font-weight: 600;
+                letter-spacing: 0.12em;
+                text-transform: uppercase;
+            }
+
+            .lang-toggle {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+            .lang-flag {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                cursor: pointer;
+                opacity: 0.6;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+                object-fit: cover;
+            }
+            .lang-flag.active {
+                opacity: 1;
+                border-color: var(--brand-500);
+                transform: scale(1.1);
+                box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+            }
+            .lang-flag:hover {
+                opacity: 0.9;
+                transform: scale(1.05);
+            }
+
+            .hero {
+                position: relative;
+                background: white;
+                border-bottom: 1px solid var(--slate-100);
+                overflow: hidden;
+            }
+            .hero-bg {
+                position: absolute;
+                inset: 0;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            .hero-orb {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(60px);
+                animation: pulseGlow 4s ease-in-out infinite;
+            }
+            .hero-orb--teal {
+                width: 300px;
+                height: 300px;
+                background: var(--brand-100);
+                top: -50px;
+                left: -80px;
+            }
+            .hero-orb--amber {
+                width: 250px;
+                height: 250px;
+                background: #ffedd5;
+                bottom: -60px;
+                right: -60px;
+                animation-delay: 1.5s;
+            }
+            .hero-orb--pink {
+                width: 180px;
+                height: 180px;
+                background: #fff7ed;
+                top: 40%;
+                right: 20%;
+                animation-delay: 3s;
+            }
+            .hero-content {
+                position: relative;
+                z-index: 2;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 72px 24px 56px;
+                text-align: center;
+            }
+            .hero-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 6px 16px;
+                border-radius: var(--radius-full);
+                background: var(--slate-50);
+                border: 1px solid var(--slate-200);
+                font-family: var(--font-display);
+                font-size: 0.7rem;
+                font-weight: 700;
+                color: var(--slate-500);
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                margin-bottom: 24px;
+            }
+            .hero-badge svg {
+                color: var(--brand-500);
+            }
+            .hero-title {
+                font-family: var(--font-display);
+                font-size: clamp(2.2rem, 5vw, 3.5rem);
+                font-weight: 800;
+                color: var(--slate-900);
+                letter-spacing: -0.03em;
+                line-height: 1.1;
+                margin-bottom: 20px;
+            }
+            .hero-desc {
+                font-size: 1.1rem;
+                color: var(--slate-500);
+                max-width: 600px;
+                margin: 0 auto 28px;
+                line-height: 1.7;
+            }
+            .hero-meta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                font-size: 0.8rem;
+                color: var(--slate-400);
+                font-weight: 500;
+            }
+            .hero-meta svg {
+                width: 14px;
+                height: 14px;
+            }
+
+            .disclaimer {
+                background: linear-gradient(135deg, var(--brand-900), var(--slate-900));
+                color: white;
+                padding: 14px 24px;
+                text-align: center;
+                font-size: 0.82rem;
+                font-weight: 500;
+                line-height: 1.5;
+                position: relative;
+                z-index: 10;
+            }
+            .disclaimer strong {
+                font-weight: 700;
+            }
+
+            .main-content {
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 48px 24px 64px;
+            }
+
+            .accordion-list {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .accordion-item {
+                background: white;
+                border: 1px solid var(--slate-200);
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            .accordion-item:hover {
+                border-color: var(--brand-200);
+                box-shadow: 0 2px 16px rgba(234, 88, 12, 0.06);
+            }
+            .accordion-item.open {
+                border-color: var(--brand-300);
+                box-shadow: 0 4px 24px rgba(234, 88, 12, 0.08);
+            }
+            .accordion-trigger {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 20px 24px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                text-align: left;
+                font-family: var(--font-body);
+                transition: background 0.2s ease;
+            }
+            .accordion-trigger:hover {
+                background: var(--slate-50);
+            }
+            .accordion-trigger-left {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+            }
+            .accordion-icon-wrap {
+                width: 44px;
+                height: 44px;
+                border-radius: var(--radius-md);
+                background: var(--brand-50);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--brand-600);
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+            .accordion-item:hover .accordion-icon-wrap,
+            .accordion-item.open .accordion-icon-wrap {
+                background: var(--brand-500);
+                color: white;
+            }
+            .accordion-icon-wrap svg {
+                width: 20px;
+                height: 20px;
+            }
+            .accordion-title {
+                font-family: var(--font-display);
+                font-size: 1.05rem;
+                font-weight: 700;
+                color: var(--slate-800);
+                transition: color 0.2s ease;
+            }
+            .accordion-item:hover .accordion-title {
+                color: var(--brand-700);
+            }
+            .accordion-chevron {
+                width: 32px;
+                height: 32px;
+                border-radius: var(--radius-full);
+                border: 1px solid var(--slate-200);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--slate-400);
+                flex-shrink: 0;
+                transition: all 0.3s ease;
+            }
+            .accordion-item.open .accordion-chevron {
+                transform: rotate(180deg);
+                border-color: var(--brand-300);
+                color: var(--brand-600);
+                background: var(--brand-50);
+            }
+            .accordion-chevron svg {
+                width: 16px;
+                height: 16px;
+            }
+            .accordion-body {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.3s ease;
+            }
+            .accordion-item.open .accordion-body {
+                max-height: 800px;
+                opacity: 1;
+            }
+            .accordion-body-inner {
+                padding: 0 24px 24px 84px;
+                font-size: 0.92rem;
+                color: var(--slate-600);
+                line-height: 1.8;
+            }
+            .accordion-body-inner p {
+                margin-bottom: 12px;
+            }
+            .accordion-body-inner ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .accordion-body-inner li {
+                padding-left: 20px;
+                position: relative;
+            }
+            .accordion-body-inner li::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: var(--brand-400);
+            }
+            .accordion-body-inner li strong {
+                color: var(--slate-800);
+                font-weight: 600;
+            }
+            .info-box {
+                background: var(--orange-50);
+                border: 1px solid var(--orange-100);
+                border-radius: var(--radius-md);
+                padding: 16px 20px;
+                margin: 12px 0;
+            }
+            .info-box-title {
+                font-weight: 700;
+                color: var(--orange-800);
+                font-size: 0.88rem;
+                margin-bottom: 4px;
+            }
+            .info-box p {
+                font-size: 0.84rem;
+                color: var(--orange-700);
+                margin: 0;
+            }
+            .text-muted {
+                font-size: 0.84rem;
+                color: var(--slate-500);
+            }
+
+            .cta-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+                margin-top: 48px;
+            }
+            @media (max-width: 600px) {
+                .cta-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .card {
+                position: relative;
+                background: white;
+                border: 1px solid var(--slate-200);
+                border-radius: var(--radius-xl);
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            .card:hover {
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-2px);
+            }
+            .card-accent {
+                height: 3px;
+                background: linear-gradient(90deg, var(--brand-400), var(--brand-600));
+            }
+            .card-body {
+                padding: 32px 28px;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+            .card-icon {
+                width: 52px;
+                height: 52px;
+                border-radius: var(--radius-full);
+                background: var(--slate-100);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--slate-400);
+            }
+            .card-icon svg {
+                width: 24px;
+                height: 24px;
+            }
+            .card-title {
+                font-family: var(--font-display);
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: var(--slate-900);
+            }
+            .card-desc {
+                font-size: 0.88rem;
+                color: var(--slate-500);
+                line-height: 1.6;
+            }
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                padding: 14px 28px;
+                border-radius: var(--radius-md);
+                font-family: var(--font-display);
+                font-size: 0.88rem;
+                font-weight: 700;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            .btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            .btn-dark {
+                background: var(--slate-900);
+                color: white;
+            }
+            .btn-dark:hover {
+                background: var(--brand-600);
+                box-shadow: 0 4px 20px rgba(234, 88, 12, 0.3);
+                transform: translateY(-1px);
+            }
+            .btn-play {
+                background: var(--slate-900);
+                color: white;
+                gap: 10px;
+            }
+            .btn-play:hover {
+                background: var(--brand-600);
+                box-shadow: 0 4px 20px rgba(234, 88, 12, 0.3);
+                transform: translateY(-1px);
+            }
+
+            .footer {
+                border-top: 1px solid var(--slate-200);
+                background: white;
+                padding: 20px 24px;
+            }
+            .footer-inner {
+                max-width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .footer-brand {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .footer-brand img {
+                width: 56px;
+                height: 56px;
+                border-radius: 6px;
+                opacity: 0.6;
+            }
+            .footer-link {
+                font-size: 0.82rem;
+                font-weight: 500;
+                color: var(--slate-400);
+                transition: color 0.2s ease;
+            }
+            .footer-link:hover {
+                color: var(--brand-600);
+            }
+            .footer-copy {
+                font-size: 0.78rem;
+                color: var(--slate-400);
+            }
+
+            @media (max-width: 640px) {
+                .hero-content {
+                    padding: 48px 20px 40px;
+                }
+                .hero-title {
+                    font-size: 2rem;
+                }
+                .hero-desc {
+                    font-size: 0.95rem;
+                }
+                .accordion-trigger {
+                    padding: 16px 18px;
+                }
+                .accordion-body-inner {
+                    padding: 0 18px 20px 18px;
+                }
+                .accordion-trigger-left {
+                    gap: 12px;
+                }
+                .accordion-icon-wrap {
+                    width: 38px;
+                    height: 38px;
+                }
+                .accordion-title {
+                    font-size: 0.92rem;
+                }
+                .card-body {
+                    padding: 24px 20px;
+                }
+                .lang-flag {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="https://purescan-foods.septimuslab.com" class="brand">
+                    <img src="../assets/purescan.png" alt="PureScan" class="brand-logo" />
+                    <div class="brand-text">
+                        <span class="brand-name">Pure<span>Scan</span></span>
+                        <span class="brand-subtitle">Foods</span>
+                    </div>
+                </a>
+                <div class="lang-toggle" id="lang-toggle">
+                    <img src="../assets/turkey-flag-round.png" class="lang-flag active" data-lang="tr" id="btn-tr" alt="Türkçe" />
+                    <img src="../assets/us-flag-round.png" class="lang-flag" data-lang="en" id="btn-en" alt="English" />
+                    <img src="../assets/spain-flag-round.png" class="lang-flag" data-lang="es" id="btn-es" alt="Español" />
+                </div>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-bg">
+                <div class="hero-orb hero-orb--teal"></div>
+                <div class="hero-orb hero-orb--amber"></div>
+                <div class="hero-orb hero-orb--pink"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge animate-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                    <span id="hero-badge-text">Yasal Belge</span>
+                </div>
+                <h1 class="hero-title animate-up delay-1" id="hero-title">Destek</h1>
+                <p class="hero-desc animate-up delay-2" id="hero-desc">PureScan Foods hakkında sık sorulan sorular ve bize ulaşabileceğiniz kanallar.</p>
+                <div class="hero-meta animate-up delay-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span id="hero-date-label">Son Güncelleme:</span> <span>09.06.2026</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="disclaimer" id="disclaimer">⚠️ <strong>YASAL UYARI:</strong> PureScan tıbbi bir cihaz değildir. AI destekli analizler sadece bilgilendirme amaçlıdır ve profesyonel tıbbi/diyetisyen tavsiyesi yerine geçmez.</div>
+
+        <main class="main-content">
+            <div class="accordion-list" id="accordion-list"></div>
+
+            <div class="cta-grid">
+                <div class="card animate-up">
+                    <div class="card-accent"></div>
+                    <div class="card-body">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                        </div>
+                        <h3 class="card-title" id="contact-title">İletişime Geçin</h3>
+                        <p class="card-desc" id="contact-desc">Gizlilik politikamız veya verileriniz hakkında sorularınız mı var?</p>
+                        <a href="mailto:info@septimuslab.com" class="btn btn-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            info@septimuslab.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card animate-up delay-1">
+                    <div class="card-accent" style="background: linear-gradient(90deg, #f97316, #ea580c)"></div>
+                    <div class="card-body">
+                        <div class="card-icon" style="background: #fff7ed; color: #ea580c">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                        </div>
+                        <h3 class="card-title" id="play-title">Uygulamayı İndir</h3>
+                        <p class="card-desc" id="play-desc">PureScan'i Google Play Store'dan ücretsiz indirin.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.purescan.foods" target="_blank" rel="noopener" class="btn btn-play">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3" /></svg>
+                            Google Play
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="https://septimuslab.com" target="_blank" rel="noopener" class="footer-link" style="font-weight: 600; color: var(--slate-600)"> <img src="../assets/septimus.png" alt="SeptimusLab" /> </a>
+                </div>
+                <p class="footer-copy">&copy; 2026 PureScan Foods by <a href="https://septimuslab.com" target="_blank" rel="noopener" style="color: var(--brand-600); font-weight: 500">SeptimusLab</a>. <span id="footer-rights">Tüm Hakları Saklıdır.</span></p>
+            </div>
+        </footer>
+
+        <script>
+            const icons = {
+                data: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>',
+                ai: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="9" cy="15" r="1"/><circle cx="15" cy="15" r="1"/></svg>',
+                money: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>',
+                trash: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/></svg>',
+                users: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+                lock: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>',
+            };
+
+            const i18n = {
+                tr: {
+                    badge: "Yardım Merkezi",
+                    title: "Destek",
+                    desc: "PureScan Foods hakkında sık sorulan sorular ve bize ulaşabileceğiniz kanallar. Aradığınızı bulamazsanız e-posta ile yazın, yardımcı olalım.",
+                    dateLabel: "Son Güncelleme:",
+                    disclaimer: "⚠️ <strong>YASAL UYARI:</strong> PureScan tıbbi bir cihaz değildir. AI destekli analizler sadece bilgilendirme amaçlıdır ve profesyonel tıbbi/diyetisyen tavsiyesi yerine geçmez.",
+                    contactTitle: "İletişime Geçin",
+                    contactDesc: "Sorunuz mu var? E-posta ile bize ulaşın, en kısa sürede dönüş yapalım.",
+                    playTitle: "Uygulamayı İndir",
+                    playDesc: "PureScan'i Google Play Store'dan ücretsiz indirin.",
+                    rights: "Tüm Hakları Saklıdır.",
+                    sections: [
+                        {
+                            icon: "data",
+                            title: "1. Ürün nasıl taranır?",
+                            html: "<p>Ana ekranda üç yöntem var:</p><ul><li><strong>Kamera (OCR):</strong> İçindekiler etiketinin fotoğrafını çekin, metin otomatik okunur.</li><li><strong>Barkod:</strong> Ürün barkodunu okutun; bilgi OpenFoodFacts veritabanından gelir.</li><li><strong>Metin:</strong> İçindekiler listesini elle yapıştırın.</li></ul><p>Tarama sonrası katkı maddeleri, E-kodları, NOVA ve Nutri-Score tek ekranda gösterilir.</p>",
+                        },
+                        {
+                            icon: "money",
+                            title: "2. Premium abonelik ve iptal",
+                            html: "<p>PureScan Premium aylık ve yıllık olarak sunulan otomatik yenilenen bir aboneliktir; sınırsız tarama, sınırsız Guru sohbeti, sınırsız aile profili ve reklamsız kullanım sağlar.</p><p><strong>İptal:</strong> Aboneliğinizi istediğiniz zaman <strong>iOS Ayarlar &gt; Apple Kimliği &gt; Abonelikler</strong> üzerinden yönetebilir ve otomatik yenilemeyi kapatabilirsiniz. İptal, mevcut dönemin sonunda geçerli olur.</p><p><strong>Geri yükleme:</strong> Yeni cihazda veya yeniden kurulumda paywall'daki <strong>\"Satın Alımları Geri Yükle\"</strong> ile premium'unuzu geri getirebilirsiniz.</p>",
+                        },
+                        {
+                            icon: "users",
+                            title: "3. Aile profilleri ve alerjenler",
+                            html: "<p>Her aile üyesi için ayrı diyet tercihi ve alerjen hassasiyeti tanımlayabilirsiniz. Bir ürün taradığınızda tüm profiller için uyumluluk aynı anda hesaplanır ve riskli içerikler işaretlenir.</p><p>Profilleri Beslenme/Profil bölümünden ekleyip düzenleyebilirsiniz.</p>",
+                        },
+                        {
+                            icon: "trash",
+                            title: "4. Hesabımı veya verilerimi nasıl silerim?",
+                            html: "<p>Uygulama içinden: <strong>Ayarlar &gt; Veri Yönetimi</strong>.</p><ul><li><strong>Verilerimi Sil:</strong> Hesabınızı kapatmadan tüm verilerinizi (tarama geçmişi, profiller) kalıcı olarak siler.</li><li><strong>Hesabımı Sil:</strong> Hesabınızı ve ilişkili tüm verileri kalıcı olarak siler.</li></ul><p>Detaylar için <a href='../privacy-policy/'>Gizlilik Politikası</a>'na bakın.</p>",
+                        },
+                        {
+                            icon: "lock",
+                            title: "5. Bize ulaşın",
+                            html: "<p>Sorularınız, hata bildirimleri ve geri bildirimleriniz için: <strong>info@septimuslab.com</strong></p><p>Genellikle 1-3 iş günü içinde yanıt veriyoruz. Bir sorunu bildirirken cihaz modeli ve iOS sürümünü eklerseniz daha hızlı yardımcı oluruz.</p>",
+                        },
+                    ],
+                },
+                en: {
+                    badge: "Help Center",
+                    title: "Support",
+                    desc: "Frequently asked questions about PureScan Foods and how to reach us. If you can't find what you need, email us and we'll help.",
+                    dateLabel: "Last Updated:",
+                    disclaimer: "⚠️ <strong>LEGAL DISCLAIMER:</strong> PureScan is not a medical device. AI-powered analyses are for informational purposes only and do not substitute professional medical/dietary advice.",
+                    contactTitle: "Contact Us",
+                    contactDesc: "Have a question? Email us and we'll get back to you as soon as we can.",
+                    playTitle: "Download App",
+                    playDesc: "Download PureScan from Google Play Store for free.",
+                    rights: "All Rights Reserved.",
+                    sections: [
+                        {
+                            icon: "data",
+                            title: "1. How do I scan a product?",
+                            html: "<p>There are three ways on the home screen:</p><ul><li><strong>Camera (OCR):</strong> Take a photo of the ingredients label and the text is read automatically.</li><li><strong>Barcode:</strong> Scan the product barcode; data comes from the OpenFoodFacts database.</li><li><strong>Text:</strong> Paste an ingredients list manually.</li></ul><p>After scanning, additives, E-codes, NOVA and Nutri-Score are shown on a single screen.</p>",
+                        },
+                        {
+                            icon: "money",
+                            title: "2. Premium subscription & cancellation",
+                            html: "<p>PureScan Premium is an auto-renewable subscription offered monthly and yearly. It provides unlimited scans, unlimited Guru chat, unlimited family profiles and an ad-free experience.</p><p><strong>Cancel:</strong> You can manage your subscription and turn off auto-renewal anytime in <strong>iOS Settings &gt; Apple ID &gt; Subscriptions</strong>. Cancellation takes effect at the end of the current period.</p><p><strong>Restore:</strong> On a new device or reinstall, use <strong>\"Restore Purchases\"</strong> on the paywall to recover your premium.</p>",
+                        },
+                        {
+                            icon: "users",
+                            title: "3. Family profiles & allergens",
+                            html: "<p>You can define a separate diet preference and allergen sensitivity for each family member. When you scan a product, compatibility for all profiles is calculated at once and risky contents are flagged.</p><p>Add and edit profiles from the Nutrition/Profile section.</p>",
+                        },
+                        {
+                            icon: "trash",
+                            title: "4. How do I delete my account or data?",
+                            html: "<p>In the app: <strong>Settings &gt; Data Management</strong>.</p><ul><li><strong>Delete My Data:</strong> Permanently deletes all your data (scan history, profiles) without closing your account.</li><li><strong>Delete My Account:</strong> Permanently deletes your account and all associated data.</li></ul><p>See the <a href='../privacy-policy/'>Privacy Policy</a> for details.</p>",
+                        },
+                        {
+                            icon: "lock",
+                            title: "5. Contact us",
+                            html: "<p>For questions, bug reports and feedback: <strong>info@septimuslab.com</strong></p><p>We usually reply within 1-3 business days. Including your device model and iOS version when reporting an issue helps us help you faster.</p>",
+                        },
+                    ],
+                },
+                es: {
+                    badge: "Centro de Ayuda",
+                    title: "Soporte",
+                    desc: "Preguntas frecuentes sobre PureScan Foods y cómo contactarnos. Si no encuentras lo que buscas, escríbenos por correo y te ayudamos.",
+                    dateLabel: "Última Actualización:",
+                    disclaimer: "⚠️ <strong>AVISO LEGAL:</strong> PureScan no es un dispositivo médico. Los análisis impulsados por IA son solo informativos y no sustituyen el asesoramiento médico/dietético profesional.",
+                    contactTitle: "Contáctenos",
+                    contactDesc: "¿Tienes una pregunta? Escríbenos y te responderemos lo antes posible.",
+                    playTitle: "Descargar App",
+                    playDesc: "Descargue PureScan gratis desde Google Play Store.",
+                    rights: "Todos los Derechos Reservados.",
+                    sections: [
+                        {
+                            icon: "data",
+                            title: "1. ¿Cómo escaneo un producto?",
+                            html: "<p>Hay tres formas en la pantalla principal:</p><ul><li><strong>Cámara (OCR):</strong> Toma una foto de la etiqueta de ingredientes y el texto se lee automáticamente.</li><li><strong>Código de barras:</strong> Escanea el código del producto; los datos provienen de la base de datos OpenFoodFacts.</li><li><strong>Texto:</strong> Pega una lista de ingredientes manualmente.</li></ul><p>Tras escanear, los aditivos, códigos E, NOVA y Nutri-Score se muestran en una sola pantalla.</p>",
+                        },
+                        {
+                            icon: "money",
+                            title: "2. Suscripción Premium y cancelación",
+                            html: "<p>PureScan Premium es una suscripción de renovación automática ofrecida de forma mensual y anual. Incluye escaneos ilimitados, chat Guru ilimitado, perfiles familiares ilimitados y experiencia sin anuncios.</p><p><strong>Cancelar:</strong> Puedes gestionar tu suscripción y desactivar la renovación automática en cualquier momento en <strong>Ajustes de iOS &gt; Apple ID &gt; Suscripciones</strong>. La cancelación surte efecto al final del período actual.</p><p><strong>Restaurar:</strong> En un dispositivo nuevo o reinstalación, usa <strong>\"Restaurar Compras\"</strong> en la pantalla de suscripción para recuperar tu premium.</p>",
+                        },
+                        {
+                            icon: "users",
+                            title: "3. Perfiles familiares y alérgenos",
+                            html: "<p>Puedes definir una preferencia de dieta y sensibilidad a alérgenos para cada miembro de la familia. Al escanear un producto, la compatibilidad de todos los perfiles se calcula a la vez y se marcan los contenidos de riesgo.</p><p>Añade y edita perfiles desde la sección de Nutrición/Perfil.</p>",
+                        },
+                        {
+                            icon: "trash",
+                            title: "4. ¿Cómo elimino mi cuenta o mis datos?",
+                            html: "<p>En la app: <strong>Ajustes &gt; Gestión de Datos</strong>.</p><ul><li><strong>Eliminar Mis Datos:</strong> Elimina permanentemente todos tus datos (historial, perfiles) sin cerrar la cuenta.</li><li><strong>Eliminar Mi Cuenta:</strong> Elimina permanentemente tu cuenta y todos los datos asociados.</li></ul><p>Consulta la <a href='../privacy-policy/'>Política de Privacidad</a> para más detalles.</p>",
+                        },
+                        {
+                            icon: "lock",
+                            title: "5. Contáctanos",
+                            html: "<p>Para preguntas, reportes de errores y comentarios: <strong>info@septimuslab.com</strong></p><p>Normalmente respondemos en 1-3 días hábiles. Incluir el modelo de tu dispositivo y la versión de iOS al reportar un problema nos ayuda a ayudarte más rápido.</p>",
+                        },
+                    ],
+                },
+            };
+
+            let currentLang = "tr";
+            let openIndex = null;
+
+            function render(lang) {
+                const d = i18n[lang];
+
+                document.getElementById("hero-badge-text").textContent = d.badge;
+                document.getElementById("hero-title").textContent = d.title;
+                document.getElementById("hero-desc").textContent = d.desc;
+                document.getElementById("hero-date-label").textContent = d.dateLabel;
+
+                document.getElementById("disclaimer").innerHTML = d.disclaimer;
+
+                document.getElementById("contact-title").textContent = d.contactTitle;
+                document.getElementById("contact-desc").textContent = d.contactDesc;
+                document.getElementById("play-title").textContent = d.playTitle;
+                document.getElementById("play-desc").textContent = d.playDesc;
+
+                document.getElementById("footer-rights").textContent = d.rights;
+
+                const list = document.getElementById("accordion-list");
+                list.innerHTML = "";
+
+                d.sections.forEach(function (section, i) {
+                    var item = document.createElement("div");
+                    item.className = "accordion-item animate-up";
+                    item.style.animationDelay = i * 0.08 + "s";
+                    if (openIndex === i) item.classList.add("open");
+
+                    item.innerHTML =
+                        '<button class="accordion-trigger" data-index="' +
+                        i +
+                        '">' +
+                        '<div class="accordion-trigger-left">' +
+                        '<div class="accordion-icon-wrap">' +
+                        (icons[section.icon] || icons.data) +
+                        "</div>" +
+                        '<span class="accordion-title">' +
+                        section.title +
+                        "</span>" +
+                        "</div>" +
+                        '<div class="accordion-chevron">' +
+                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>' +
+                        "</div>" +
+                        "</button>" +
+                        '<div class="accordion-body">' +
+                        '<div class="accordion-body-inner">' +
+                        section.html +
+                        "</div>" +
+                        "</div>";
+
+                    list.appendChild(item);
+                });
+
+                document.querySelectorAll(".accordion-trigger").forEach(function (btn) {
+                    btn.addEventListener("click", function () {
+                        var idx = parseInt(this.getAttribute("data-index"));
+                        toggleAccordion(idx);
+                    });
+                });
+            }
+
+            function toggleAccordion(idx) {
+                var items = document.querySelectorAll(".accordion-item");
+                items.forEach(function (item, i) {
+                    if (i === idx) {
+                        item.classList.toggle("open");
+                        openIndex = item.classList.contains("open") ? idx : null;
+                    } else {
+                        item.classList.remove("open");
+                    }
+                });
+            }
+
+            const btnTr = document.getElementById("btn-tr");
+            const btnEn = document.getElementById("btn-en");
+            const btnEs = document.getElementById("btn-es");
+
+            function switchLang(lang) {
+                currentLang = lang;
+                openIndex = null;
+
+                btnTr.classList.toggle("active", lang === "tr");
+                btnEn.classList.toggle("active", lang === "en");
+                btnEs.classList.toggle("active", lang === "es");
+
+                document.documentElement.lang = lang;
+
+                const main = document.querySelector(".main-content");
+                const hero = document.querySelector(".hero");
+                main.style.opacity = "0";
+                hero.style.opacity = "0";
+                main.style.transition = "opacity 0.2s ease";
+                hero.style.transition = "opacity 0.2s ease";
+
+                setTimeout(function () {
+                    render(lang);
+                    main.style.opacity = "1";
+                    hero.style.opacity = "1";
+                }, 200);
+            }
+
+            btnTr.addEventListener("click", function () {
+                switchLang("tr");
+            });
+            btnEn.addEventListener("click", function () {
+                switchLang("en");
+            });
+            btnEs.addEventListener("click", function () {
+                switchLang("es");
+            });
+
+            window.addEventListener("scroll", function () {
+                document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 10);
+            });
+
+            render("tr");
+        </script>
+    </body>
+</html>
