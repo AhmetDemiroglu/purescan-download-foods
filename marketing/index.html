@@ -220,6 +220,10 @@
                 opacity: 0.9;
                 transform: scale(1.05);
             }
+            .nav-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 4px; max-width: 1000px; margin: 0 auto; padding: 0 16px 10px; }
+            .nav-link { font-family: var(--font-display); font-size: 0.82rem; font-weight: 600; color: var(--slate-500); padding: 6px 14px; border-radius: var(--radius-full); transition: all 0.2s ease; text-decoration: none; }
+            .nav-link:hover { color: var(--brand-600); background: var(--brand-50); }
+            .nav-link.active { color: var(--brand-700); background: var(--brand-100); }
 
             .hero {
                 position: relative;
@@ -699,6 +703,7 @@
                     <img src="../assets/spain-flag-round.png" class="lang-flag" data-lang="es" id="btn-es" alt="Español" />
                 </div>
             </div>
+            <div class="nav-tabs" id="navTabs"></div>
         </nav>
 
         <header class="hero">
@@ -1000,6 +1005,7 @@
                 btnEs.classList.toggle("active", lang === "es");
 
                 document.documentElement.lang = lang;
+                if (window.renderNav) renderNav(lang);
 
                 const main = document.querySelector(".main-content");
                 const hero = document.querySelector(".hero");
@@ -1028,6 +1034,29 @@
             window.addEventListener("scroll", function () {
                 document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 10);
             });
+
+            const NAV_LABELS = {
+                tr: { app: "Uygulama", privacy: "Gizlilik", terms: "Koşullar", support: "Destek" },
+                en: { app: "App", privacy: "Privacy", terms: "Terms", support: "Support" },
+                es: { app: "App", privacy: "Privacidad", terms: "Términos", support: "Soporte" }
+            };
+            const NAV_LINKS = [
+                { key: "app", href: "/marketing/" },
+                { key: "privacy", href: "/privacy-policy/" },
+                { key: "terms", href: "/terms/" },
+                { key: "support", href: "/support/" }
+            ];
+            const NAV_ACTIVE = "app";
+            function renderNav(lang) {
+                const L = NAV_LABELS[lang] || NAV_LABELS.en;
+                const el = document.getElementById("navTabs");
+                if (!el) return;
+                el.innerHTML = NAV_LINKS.map(function (l) {
+                    return '<a href="' + l.href + '" class="nav-link' + (l.key === NAV_ACTIVE ? " active" : "") + '">' + L[l.key] + "</a>";
+                }).join("");
+            }
+            window.renderNav = renderNav;
+            renderNav("tr");
 
             render("tr");
         </script>
