@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PureScan Foods - Septimus Lab</title>
-    <meta name="description" content="PureScan Foods - Gıda içeriklerinizi anında analiz edin.">
+    <meta name="description" content="PureScan Foods - Gida iceriklerinizi aninda analiz edin. Analyze food ingredients instantly.">
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <meta http-equiv="refresh" content="3;url=https://play.google.com/store/apps/details?id=com.purescan.foods">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --bg: #f8f8fa;
@@ -24,16 +19,11 @@
             --text: #1a1a2e;
             --text-secondary: #555568;
             --text-dim: #8e8e9f;
-            --accent: #1a1a2e;
-            --accent-hover: #2d2d44;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
             --shadow-icon: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
 
-        html, body {
-            height: 100%;
-        }
+        html, body { height: 100%; }
 
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,10 +39,9 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* Card */
         .card {
             width: 100%;
-            max-width: 380px;
+            max-width: 400px;
             background: var(--card);
             border: 1px solid var(--border);
             border-radius: 20px;
@@ -62,205 +51,85 @@
             animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
         }
 
-        @keyframes rise {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* App Icon */
         .app-icon {
-            width: 84px;
-            height: 84px;
-            border-radius: 20px;
+            width: 84px; height: 84px; border-radius: 20px;
             border: 1px solid var(--border);
             margin: 0 auto 1.5rem;
             box-shadow: var(--shadow-icon);
-            overflow: hidden;
-            background: #fff;
+            overflow: hidden; background: #fff;
         }
+        .app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        .app-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
+        .app-name { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.025em; color: var(--text); margin-bottom: 0.85rem; }
 
-        /* Title */
-        .app-name {
-            font-size: 1.35rem;
-            font-weight: 700;
-            letter-spacing: -0.025em;
-            color: var(--text);
-            margin-bottom: 0.85rem;
-        }
+        .desc { margin-bottom: 1.5rem; }
+        .desc-tr { font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); }
+        .desc-en { font-size: 0.78rem; line-height: 1.6; color: var(--text-dim); margin-top: 0.4rem; }
 
-        /* Desc */
-        .desc {
-            margin-bottom: 1.75rem;
-        }
+        /* Store buttons */
+        .stores { display: flex; flex-direction: column; gap: 0.6rem; width: 100%; }
 
-        .desc-tr {
-            font-size: 0.875rem;
-            line-height: 1.6;
-            color: var(--text-secondary);
-        }
-
-        .desc-en {
-            font-size: 0.78rem;
-            line-height: 1.6;
-            color: var(--text-dim);
-            margin-top: 0.4rem;
-        }
-
-        /* CTA */
-        .cta {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-            padding: 0.85rem 1.5rem;
-            background: var(--accent);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 14px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
+        .store-btn {
+            display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+            width: 100%; padding: 0.8rem 1rem;
+            background: #1a1a2e; color: #fff; text-decoration: none;
+            border-radius: 14px; transition: all 0.2s ease;
             box-shadow: 0 2px 12px rgba(26, 26, 46, 0.15);
         }
+        .store-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(26, 26, 46, 0.22); }
+        .store-btn:active { transform: translateY(0); }
+        .store-btn .ico { width: 22px; height: 22px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .store-btn .txt { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
+        .store-btn .txt .small { font-size: 0.6rem; opacity: 0.8; font-weight: 500; letter-spacing: 0.02em; }
+        .store-btn .txt .big { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
 
-        .cta:hover {
-            background: var(--accent-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 16px rgba(26, 26, 46, 0.2);
+        .store-btn--disabled {
+            background: #ececf1; color: var(--text-dim);
+            box-shadow: none; cursor: default; pointer-events: none;
         }
+        .store-btn--highlight { outline: 2px solid rgba(26,26,46,0.18); outline-offset: 2px; }
 
-        .cta:active {
-            transform: translateY(0);
-        }
-
-        .cta svg {
-            width: 17px;
-            height: 17px;
-            flex-shrink: 0;
-        }
-
-        /* Redirect */
         .redirect {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.45rem;
-            margin-top: 1.15rem;
-            font-size: 0.72rem;
-            color: var(--text-dim);
+            display: flex; align-items: center; justify-content: center; gap: 0.45rem;
+            margin-top: 1.15rem; font-size: 0.72rem; color: var(--text-dim);
+            min-height: 18px;
         }
-
-        .timer {
-            position: relative;
-            width: 18px;
-            height: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .timer span {
-            font-size: 0.62rem;
-            font-weight: 700;
-            color: var(--text-secondary);
-            z-index: 1;
-        }
-
-        .timer svg {
-            position: absolute;
-            inset: 0;
-            transform: rotate(-90deg);
-        }
-
+        .timer { position: relative; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+        .timer span { font-size: 0.62rem; font-weight: 700; color: var(--text-secondary); z-index: 1; }
+        .timer svg { position: absolute; inset: 0; transform: rotate(-90deg); }
         .timer-track { fill: none; stroke: var(--border); stroke-width: 2; }
-        .timer-progress {
-            fill: none;
-            stroke: var(--text-secondary);
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-dasharray: 44;
-            stroke-dashoffset: 0;
-            transition: stroke-dashoffset 1s linear;
-        }
+        .timer-progress { fill: none; stroke: var(--text-secondary); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 44; stroke-dashoffset: 0; transition: stroke-dashoffset 1s linear; }
 
-        /* Studio */
-        .studio {
-            margin-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.4rem;
-            animation: rise 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both;
-        }
+        .choose { margin-top: 1.1rem; font-size: 0.72rem; color: var(--text-dim); }
 
-        .studio-logo {
-            height: 26px;
-            object-fit: contain;
-            opacity: 0.35;
-        }
+        .studio { margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; animation: rise 0.6s 0.1s cubic-bezier(0.16, 1, 0.3, 1) both; }
+        .studio-logo { height: 26px; object-fit: contain; opacity: 0.35; }
+        .studio-text { font-size: 0.58rem; color: var(--text-dim); letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.45; }
 
-        .studio-text {
-            font-size: 0.58rem;
-            color: var(--text-dim);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            opacity: 0.45;
-        }
-
-        /* Mobile */
         @media (max-width: 420px) {
             body { padding: 1rem; }
             .card { padding: 2rem 1.5rem 1.75rem; border-radius: 18px; }
             .app-icon { width: 76px; height: 76px; border-radius: 18px; }
             .app-name { font-size: 1.25rem; }
-            .desc-tr { font-size: 0.84rem; }
-            .cta { padding: 0.8rem 1.25rem; font-size: 0.87rem; border-radius: 12px; }
-        }
-
-        @media (max-width: 360px) {
-            .card { padding: 1.75rem 1.25rem 1.5rem; }
-            .app-icon { width: 68px; height: 68px; border-radius: 16px; margin-bottom: 1.25rem; }
-            .app-name { font-size: 1.15rem; }
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <div class="app-icon">
-            <img src="assets/purescan.png" alt="PureScan Foods">
-        </div>
-
+        <div class="app-icon"><img src="assets/purescan.png" alt="PureScan Foods"></div>
         <h1 class="app-name">PureScan Foods</h1>
-
         <div class="desc">
-            <p class="desc-tr">Gıda içeriklerini saniyeler içinde analiz edin.<br>Tükettiğiniz ürünleri daha bilinçli değerlendirin.</p>
+            <p class="desc-tr">Gida iceriklerini saniyeler icinde analiz edin.<br>Tukettiginiz urunleri daha bilincli degerlendirin.</p>
             <p class="desc-en">Analyze food ingredients instantly.</p>
         </div>
 
-        <a href="https://play.google.com/store/apps/details?id=com.purescan.foods" class="cta">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814a1 1 0 0 0-.609.92v18.532a1 1 0 0 0 .609.92L13.13 12 3.609 1.814zM5 4.18 11.26 12 5 19.82V4.18zm.94-.98L14.442 12l-8.502 8.8 9.728-5.41L20 12l-4.332-3.39L5.94 3.2zM16.73 9.31 18.5 12l-1.77 2.69L13.87 12l2.86-2.69z"/></svg>
-            PureScan Foods'u İndir
-        </a>
+        <div class="stores" id="stores"></div>
 
-        <div class="redirect">
-            <div class="timer">
-                <svg viewBox="0 0 18 18">
-                    <circle class="timer-track" cx="9" cy="9" r="7"/>
-                    <circle class="timer-progress" id="timerCircle" cx="9" cy="9" r="7"/>
-                </svg>
-                <span id="counter">3</span>
-            </div>
-            <span>Yönlendiriliyor…</span>
-        </div>
+        <div class="redirect" id="redirect"></div>
+        <div class="choose" id="choose"></div>
     </div>
 
     <div class="studio">
@@ -269,28 +138,77 @@
     </div>
 
     <script>
-        const WEB_URL = 'https://play.google.com/store/apps/details?id=com.purescan.foods';
-        const counter = document.getElementById('counter');
-        const circle = document.getElementById('timerCircle');
-        const C = 2 * Math.PI * 7;
-        let sec = 3;
+        // ====== CONFIG ======
+        // App Store linki yayina girince doldur: 'https://apps.apple.com/app/idXXXXXXXXXX'
+        const STORE = {
+            play: 'https://play.google.com/store/apps/details?id=com.purescan.foods',
+            appStore: ''
+        };
+        const AUTO_REDIRECT_SECONDS = 3;
 
-        circle.style.strokeDasharray = C;
-        circle.style.strokeDashoffset = '0';
+        // ====== ICONS ======
+        const APPLE_ICON = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>';
+        const PLAY_ICON = '<svg viewBox="0 0 24 24" width="22" height="22"><path fill="#00C4FF" d="M3.6 2.4c-.3.2-.5.6-.5 1.1v16.9c0 .5.2.9.5 1.1l9-9.5-9-9.6z"/><path fill="#FFD300" d="M16.6 8.6l-3.5 3.4 3.5 3.4 4.1-2.3c.8-.5.8-1.7 0-2.2l-4.1-2.3z"/><path fill="#00EE76" d="M3.6 21.5c.4.3 1 .4 1.6 0l11.4-6.5-3.5-3.4-9.5 9.9z"/><path fill="#FF3945" d="M3.6 2.4l9.5 9.6 3.5-3.4L5.2 2.1c-.6-.4-1.2-.3-1.6.3z"/></svg>';
 
-        function redirect() {
-            window.location.href = WEB_URL;
+        const t = {
+            apple: { small: 'Download on the', big: 'App Store' },
+            play:  { small: 'GET IT ON', big: 'Google Play' },
+            soon:  { small: 'Cok yakinda', big: 'App Store' }
+        };
+
+        function btn(href, iconHtml, small, big, opts) {
+            opts = opts || {};
+            const cls = 'store-btn' + (opts.disabled ? ' store-btn--disabled' : '') + (opts.highlight ? ' store-btn--highlight' : '');
+            const tag = opts.disabled ? 'div' : 'a';
+            const hrefAttr = opts.disabled ? '' : (' href="' + href + '"');
+            return '<' + tag + hrefAttr + ' class="' + cls + '">' +
+                '<span class="ico">' + iconHtml + '</span>' +
+                '<span class="txt"><span class="small">' + small + '</span><span class="big">' + big + '</span></span>' +
+                '</' + tag + '>';
         }
 
-        const tick = setInterval(() => {
-            sec--;
-            counter.textContent = sec;
-            circle.style.strokeDashoffset = C * (1 - sec / 3);
-            if (sec <= 0) {
-                clearInterval(tick);
-                redirect();
-            }
-        }, 1000);
+        // ====== DETECT ======
+        const ua = navigator.userAgent || '';
+        const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        const isAndroid = /Android/.test(ua);
+        const hasAppStore = !!STORE.appStore;
+
+        // Hangi mağazaya otomatik yönlendirilecek? (link yoksa null)
+        let target = null;
+        if (isIOS && hasAppStore) target = STORE.appStore;
+        else if (isAndroid && STORE.play) target = STORE.play;
+
+        // ====== RENDER BUTTONS ======
+        const appleBtn = hasAppStore
+            ? btn(STORE.appStore, APPLE_ICON, t.apple.small, t.apple.big, { highlight: isIOS })
+            : btn('', APPLE_ICON, t.soon.small, t.soon.big, { disabled: true });
+        const playBtn = btn(STORE.play, PLAY_ICON, t.play.small, t.play.big, { highlight: isAndroid });
+
+        // iOS kullanicisina once App Store'u goster; Android'e once Play'i
+        document.getElementById('stores').innerHTML = isIOS ? (appleBtn + playBtn) : (playBtn + appleBtn);
+
+        // ====== AUTO REDIRECT (sadece bu cihaz icin gecerli mağaza varsa) ======
+        const redirectEl = document.getElementById('redirect');
+        const chooseEl = document.getElementById('choose');
+
+        if (target) {
+            let sec = AUTO_REDIRECT_SECONDS;
+            const C = 2 * Math.PI * 7;
+            redirectEl.innerHTML = '<div class="timer"><svg viewBox="0 0 18 18"><circle class="timer-track" cx="9" cy="9" r="7"/><circle class="timer-progress" id="tc" cx="9" cy="9" r="7"/></svg><span id="cnt">' + sec + '</span></div><span>Yonlendiriliyor / Redirecting...</span>';
+            const circle = document.getElementById('tc');
+            const cnt = document.getElementById('cnt');
+            circle.style.strokeDasharray = C; circle.style.strokeDashoffset = '0';
+            const tick = setInterval(function () {
+                sec--; cnt.textContent = sec;
+                circle.style.strokeDashoffset = C * (1 - sec / AUTO_REDIRECT_SECONDS);
+                if (sec <= 0) { clearInterval(tick); window.location.href = target; }
+            }, 1000);
+        } else {
+            // Otomatik yonlendirme yok (iOS link yok / masaustu) -> kullanici secsin
+            chooseEl.textContent = isIOS
+                ? 'App Store surumu cok yakinda. / Coming soon to the App Store.'
+                : 'Magazanizi secin / Choose your store';
+        }
     </script>
 </body>
 </html>
