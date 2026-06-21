@@ -130,16 +130,14 @@
       els.forEach((el) => el.classList.add("visible"));
       return;
     }
+    // toggle (not one-shot) so content animates in BOTH scroll directions
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("visible");
-            io.unobserve(e.target);
-          }
+          e.target.classList.toggle("visible", e.isIntersecting);
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
     );
     els.forEach((el) => io.observe(el));
   }
@@ -150,17 +148,18 @@
     const items = Array.from(document.querySelectorAll("[data-parallax]")).map((el) => ({
       el,
       speed: parseFloat(el.dataset.parallax) || 0.06,
-      host: el.closest("section") || document.body,
     }));
     if (!items.length) return;
     let ticking = false;
     function update() {
       const vh = window.innerHeight;
-      items.forEach(({ el, speed, host }) => {
-        const rect = host.getBoundingClientRect();
-        if (rect.bottom < -240 || rect.top > vh + 240) return;
-        const progress = vh - rect.top;
-        el.style.translate = "0 " + (-progress * speed).toFixed(1) + "px";
+      items.forEach(({ el, speed }) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom < -80 || rect.top > vh + 80) return;
+        // bounded: drift based on the element's own position in the viewport,
+        // so it never accumulates and can't ride over neighbouring content
+        const rel = (rect.top + rect.height / 2 - vh / 2) / vh;
+        el.style.translate = "0 " + (rel * -speed * 200).toFixed(1) + "px";
       });
       ticking = false;
     }

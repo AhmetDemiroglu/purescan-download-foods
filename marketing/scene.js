@@ -108,14 +108,15 @@ function boot() {
     return Math.min(Math.max(-r.top / (r.height * 0.85), 0), 1.4);
   }
 
+  let isNarrow = false;
   function layout() {
     W = sizeEl.clientWidth || 1;
     H = sizeEl.clientHeight || 1;
     renderer.setSize(W, H, false);
     camera.aspect = W / H;
-    const narrow = W / H < 0.9;
-    phone.scale.setScalar(narrow ? 0.96 : 1.12);
-    camera.position.z = narrow ? 5.4 : 4.8;
+    isNarrow = W / H < 0.9;
+    phone.scale.setScalar(isNarrow ? 0.96 : 1.12);
+    camera.position.z = isNarrow ? 5.4 : 4.8;
     camera.updateProjectionMatrix();
   }
   layout();
@@ -139,8 +140,10 @@ function boot() {
     const t = clock.getElapsedTime();
     const sp = scrollProgress();
 
-    // always turning gently in 3D (screen stays readable); scroll adds a big spin
-    phone.rotation.y = -0.15 + Math.sin(t * 0.4) * 0.55 + sp * Math.PI * 2.2;
+    // always turning gently in 3D (screen stays readable); scroll adds a big spin.
+    // On mobile keep the spin small so the dark back never faces the user.
+    const spin = isNarrow ? Math.PI * 0.08 : Math.PI * 2.2;
+    phone.rotation.y = -0.15 + Math.sin(t * 0.4) * 0.55 + sp * spin;
     phone.rotation.x = -0.04 + ptr.y * 0.1 + Math.sin(t * 0.55) * 0.05 + sp * 0.12;
     phone.rotation.z = Math.sin(t * 0.45) * 0.02;
     phone.position.y = Math.sin(t * 0.8) * 0.05 + sp * 0.5;
