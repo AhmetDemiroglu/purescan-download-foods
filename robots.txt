@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://purescan-foods.septimuslab.com/sitemap.xml

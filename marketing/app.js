@@ -74,11 +74,28 @@
       if (typeof val === "string") el.innerHTML = val;
     });
 
-    // document meta
+    // document + SEO meta (keeps social/search tags correct per language)
     if (dict.meta) {
-      if (dict.meta.title) document.title = dict.meta.title;
-      const md = document.querySelector('meta[name="description"]');
-      if (md && dict.meta.desc) md.setAttribute("content", dict.meta.desc);
+      const title = dict.meta.title;
+      const desc = dict.meta.desc;
+      const ogImg = "https://purescan-foods.septimuslab.com/assets/og/og-" + lang + ".png";
+      const url = "https://purescan-foods.septimuslab.com/marketing/" + (lang === "tr" ? "" : "?lang=" + lang);
+      const locale = { tr: "tr_TR", en: "en_US", es: "es_ES" }[lang];
+      const set = (sel, attr, val) => {
+        const el = document.querySelector(sel);
+        if (el && val != null) el.setAttribute(attr, val);
+      };
+      if (title) document.title = title;
+      set('meta[name="description"]', "content", desc);
+      set('meta[property="og:title"]', "content", title);
+      set('meta[property="og:description"]', "content", desc);
+      set('meta[property="og:image"]', "content", ogImg);
+      set('meta[property="og:url"]', "content", url);
+      set('meta[property="og:locale"]', "content", locale);
+      set('meta[name="twitter:title"]', "content", title);
+      set('meta[name="twitter:description"]', "content", desc);
+      set('meta[name="twitter:image"]', "content", ogImg);
+      set('link[rel="canonical"]', "href", url);
     }
 
     // language-specific screenshots

@@ -1,0 +1,15 @@
+{
+  "name": "PureScan Foods",
+  "short_name": "PureScan",
+  "description": "AI gıda ve içerik tarayıcı — E-kodları, katkı maddeleri, NOVA ve Nutri-Score'u saniyeler içinde öğren.",
+  "lang": "tr",
+  "start_url": "/marketing/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#FF6F00",
+  "icons": [
+    { "src": "/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
