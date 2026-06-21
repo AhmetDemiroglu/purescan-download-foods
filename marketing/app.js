@@ -15,12 +15,15 @@
   }
 
   function detectLang() {
+    const q = new URLSearchParams(location.search).get("lang");
+    if (q && LANGS.includes(q)) return q;
     const saved = localStorage.getItem(STORE_KEY);
     if (saved && LANGS.includes(saved)) return saved;
-    const nav = (navigator.language || "en").toLowerCase();
+    const nav = (navigator.language || "tr").toLowerCase();
     if (nav.startsWith("tr")) return "tr";
     if (nav.startsWith("es")) return "es";
-    return "en";
+    if (nav.startsWith("en")) return "en";
+    return "tr";
   }
 
   let currentLang = detectLang();
