@@ -150,6 +150,12 @@ img {
   transform: translateY(-2px);
   box-shadow: 0 22px 46px -16px rgba(255, 111, 0, 0.62);
 }
+.nav-cta {
+  padding: 9px 18px;
+  font-size: 0.86rem;
+  border-radius: 11px;
+  box-shadow: 0 8px 18px -10px rgba(255, 111, 0, 0.55);
+}
 
 /* ---------------------------------------------------------------- store badges */
 .store-badges {
@@ -810,7 +816,7 @@ img {
   filter: blur(20px);
   pointer-events: none;
 }
-.cta-card > * {
+.cta-card > *:not(.cta-glow) {
   position: relative;
   z-index: 2;
 }

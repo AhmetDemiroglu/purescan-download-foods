@@ -1,4 +1,4 @@
-/* PureScan Foods — marketing interactions
+/* PureScan Foods · marketing interactions
    i18n + language swap, scroll reveals, parallax, tilt, FAQ, mobile nav. */
 (function () {
   "use strict";
