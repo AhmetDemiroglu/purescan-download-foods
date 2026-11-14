@@ -34,7 +34,7 @@
     ".psf-brand{display:flex;align-items:center;gap:11px;text-decoration:none}" +
     ".psf-brand img{height:38px;width:auto;display:block}" +
     ".psf-word{font-family:'Sora',sans-serif;font-weight:800;font-size:1.22rem;letter-spacing:-.02em;color:#fff;line-height:1}" +
-    ".psf-word span{color:#ff6f00}" +
+    ".psf-word span{color:#f2600c}" +
     ".psf-word em{font-style:normal;font-weight:600;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-left:7px}" +
     ".psf-tag{margin:16px 0 22px;font-size:.94rem;color:rgba(255,255,255,.55);max-width:280px}" +
     ".psf-badges{display:flex;flex-wrap:wrap;gap:12px}" +

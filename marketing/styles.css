@@ -5,14 +5,14 @@
 
 :root {
   /* Brand */
-  --orange: #ff6f00;
-  --orange-2: #ff8a33;
+  --orange: #f2600c;
+  --orange-2: #ff8b3d;
   --orange-3: #ff9d4d;
   --orange-soft: #fff1e6;
   --orange-tint: #fff8f2;
 
   /* Ink / neutrals */
-  --ink: #0f172a;
+  --ink: #1f1611;
   --navy: #1e293b;
   --muted: #5b6b7f;
   --muted-2: #8595a8;
@@ -21,7 +21,7 @@
 
   /* Surfaces */
   --bg: #ffffff;
-  --bg-soft: #f8fafc;
+  --bg-soft: #fffaf5;
   --bg-warm: #fff9f4;
   --bg-dark: #120d09;
 
