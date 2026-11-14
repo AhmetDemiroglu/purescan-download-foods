@@ -51,8 +51,10 @@
     ".psf-disc{font-size:.78rem;color:rgba(255,255,255,.4);max-width:560px;margin:0}" +
     ".psf-copy{font-size:.82rem;color:rgba(255,255,255,.55);margin:0}" +
     ".psf-copy a{color:#ff9d4d;font-weight:500;text-decoration:none}" +
+    ".psf-end{display:flex;align-items:center;flex-wrap:wrap;gap:18px}" +
+    ".psf-sign img{display:block;height:20px;width:auto}" +
     "@media(max-width:980px){.psf-f-inner{grid-template-columns:1fr 1fr;gap:32px}.psf-brand-block{grid-column:1/-1}}" +
-    "@media(max-width:620px){.psf-f-inner{grid-template-columns:1fr;gap:26px}.psf-bottom{flex-direction:column;text-align:center}}";
+    "@media(max-width:620px){.psf-f-inner{grid-template-columns:1fr;gap:26px}.psf-bottom{flex-direction:column;text-align:center}.psf-end{justify-content:center}}";
 
   function badge(href, top, name, svg) {
     return '<a class="psf-badge" href="' + href + '" target="_blank" rel="noopener">' + svg +
@@ -84,13 +86,14 @@
           '<a href="/support/">' + d.support + "</a>" +
         "</nav>" +
         '<nav class="psf-col"><h4>' + d.company + "</h4>" +
-          '<a href="https://www.septimuslab.com/" target="_blank" rel="noopener">Septimus Lab</a>' +
+          '<a href="https://www.septimuslab.com/" target="_blank" rel="noopener">SeptimusLab</a>' +
           '<a href="mailto:info@septimuslab.com">' + d.contact + "</a>" +
         "</nav>" +
       "</div>" +
       '<div class="psf-bottom">' +
         '<p class="psf-disc">' + d.disclaimer + "</p>" +
-        '<p class="psf-copy">© 2026 PureScan Foods · <a href="https://www.septimuslab.com/" target="_blank" rel="noopener">Septimus Lab</a>. ' + d.rights + "</p>" +
+        '<div class="psf-end"><p class="psf-copy">© 2026 PureScan Foods. ' + d.rights + "</p>" +
+        '<a class="psf-sign" href="https://www.septimuslab.com/" target="_blank" rel="noopener"><img src="/assets/septimuslab/septimuslab-imza-koyu-zemin.svg" alt="by SeptimusLab" width="164" height="21" /></a></div>' +
       "</div>";
   }
 

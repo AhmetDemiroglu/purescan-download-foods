@@ -1043,6 +1043,17 @@ img {
   color: var(--orange-3);
   font-weight: 500;
 }
+.footer-end {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.footer-sign img {
+  display: block;
+  height: 20px;
+  width: auto;
+}
 
 /* ---------------------------------------------------------------- reveal */
 .reveal {
@@ -1196,6 +1207,9 @@ img {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+  .footer-end {
+    justify-content: center;
   }
 }
 
