@@ -253,6 +253,11 @@ img {
   align-items: center;
   gap: 11px;
 }
+.brand-lockup {
+  height: 38px;
+  width: auto;
+  display: block;
+}
 .brand-logo {
   width: 38px;
   height: 38px;
@@ -1143,11 +1148,8 @@ img {
     padding: 0 16px;
     gap: 10px;
   }
-  .brand-word {
-    font-size: 1.08rem;
-  }
-  .brand-word em {
-    display: none;
+  .brand-lockup {
+    height: 32px;
   }
   .nav-actions {
     gap: 8px;

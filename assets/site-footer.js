@@ -32,7 +32,7 @@
     ".psf-footer *{box-sizing:border-box}" +
     ".psf-f-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}" +
     ".psf-brand{display:flex;align-items:center;gap:11px;text-decoration:none}" +
-    ".psf-brand img{width:38px;height:38px;border-radius:11px}" +
+    ".psf-brand img{height:38px;width:auto;display:block}" +
     ".psf-word{font-family:'Sora',sans-serif;font-weight:800;font-size:1.22rem;letter-spacing:-.02em;color:#fff;line-height:1}" +
     ".psf-word span{color:#ff6f00}" +
     ".psf-word em{font-style:normal;font-weight:600;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-left:7px}" +
@@ -67,8 +67,7 @@
     footer.innerHTML =
       '<div class="psf-f-inner">' +
         '<div class="psf-brand-block">' +
-          '<a class="psf-brand" href="/marketing/"><img src="/assets/purescan.png" alt="" />' +
-            '<span class="psf-word">Pure<span>Scan</span><em>Foods</em></span></a>' +
+          '<a class="psf-brand" href="/marketing/"><img src="/assets/brand/lockup-h-dark.svg" alt="PureScan Foods" width="182" height="38" /></a>' +
           '<p class="psf-tag">' + d.tagline + "</p>" +
           '<div class="psf-badges">' +
             badge(APPSTORE, "Download on the", "App Store", APPLE_SVG) +
