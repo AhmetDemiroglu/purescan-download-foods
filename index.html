@@ -238,10 +238,13 @@
         const isAndroid = /Android/.test(ua);
         const hasAppStore = !!STORE.appStore;
 
+        // Arama motoru botları sayfada kalır (Googlebot akıllı telefon UA'sı "Android" içerir).
+        const isBot = /bot|crawl|spider|slurp|lighthouse|mediapartners/i.test(ua);
+
         // Hangi mağazaya otomatik yönlendirilecek? (link yoksa null)
         let target = null;
-        if (isIOS && hasAppStore) target = STORE.appStore;
-        else if (isAndroid && STORE.play) target = STORE.play;
+        if (!isBot && isIOS && hasAppStore) target = STORE.appStore;
+        else if (!isBot && isAndroid && STORE.play) target = STORE.play;
 
         // ====== RENDER BUTTONS ======
         const appleBtn = hasAppStore
